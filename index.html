@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bhalu! 🧸</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Confetti Library for Birthday Effect -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- SCREEN 1: THE MYSTERY BOX -->
+    <div id="welcome-screen" class="screen">
+        <div class="mystery-card">
+            <h2>Hey Anique! 🧸<br>Someone sent you a digital box...</h2>
+            <button class="glow-btn" onclick="openGift()">Tap to Open 🎁</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 2: MAIN BIRTHDAY WISH -->
+    <div id="birthday-screen" class="screen main-birthday hidden">
+        <h1 class="bday-title">Happy Birthday!</h1>
+        <div class="bday-name">Anique (Mine Bhalu♥️🌺🐻🧸🧸)</div>
+
+        <!-- Interactive Gifts Grid -->
+        <div class="gifts-container">
+            <div class="gift-box" onclick="revealMessage(1)">
+                <div class="gift-icon">🎁</div>
+                <p>Box 1</p>
+            </div>
+            <div class="gift-box" onclick="revealMessage(2)">
+                <div class="gift-icon">⭐</div>
+                <p>Box 2</p>
+            </div>
+            <div class="gift-box" onclick="revealMessage(3)">
+                <div class="gift-icon">❤️</div>
+                <p>Box 3</p>
+            </div>
+        </div>
+
+        <!-- Dynamic Message Box -->
+        <div class="message-display">
+            <p id="dynamic-message" class="message-text">Tap on any box above to open your virtual gifts! ✨</p>
+        </div>
+    </div>
+
+    <!-- JavaScript to Handle Interactions -->
+    <script>
+        // Birthday Messages (You can edit these lines later!)
+        const messages = {
+            1: "Happy Birthday to my favorite person! Wishing you a year full of happiness, success, and endless laughter. ✨🎉",
+            2: "May all your dreams and wishes come true this year. Keep shining bright like the star you are! ⭐🎈",
+            3: "Thank you for being such an amazing part of my life. You deserve the absolute best today and always! ❤️🐻"
+        };
+
+        // Function to handle opening the main gift screen
+        function openGift() {
+            document.getElementById('welcome-screen').classList.add('hidden');
+            document.getElementById('birthday-screen').classList.remove('hidden');
+            
+            // Trigger beautiful confetti shower
+            var duration = 3 * 1000;
+            var end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#ff758f', '#ff7fa5', '#ffe4e9']
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#ff758f', '#ff7fa5', '#ffe4e9']
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+
+        // Function to update the message when a box is clicked
+        function revealMessage(boxId) {
+            const msgElement = document.getElementById('dynamic-message');
+            msgElement.style.opacity = 0; // Smooth fade effect
+            
+            setTimeout(() => {
+                msgElement.innerText = messages[boxId];
+                msgElement.style.opacity = 1;
+                // Pop small confetti burst on click
+                confetti({
+                    particleCount: 30,
+                    spread: 60,
+                    origin: { y: 0.7 }
+                });
+            }, 200);
+        }
+    </script>
+</body>
+</html>
