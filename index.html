@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Anique! 🧸</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Confetti Library -->
+    <!-- Confetti Library for Party Poppers -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
-    <!-- Real Audio Happy Birthday Song -->
+    <!-- Your Downloaded Real Vocal Happy Birthday Song -->
     <audio id="bday-music" loop>
-        <source src="https://scummbar.com/mi2/MI1-CD/01%20-%20Opening%20Themes%20-%20Introduction.mp3" type="audio/mp3">
+        <source src="birthday.mp3" type="audio/mp3">
     </audio>
 
     <div class="card-container">
@@ -26,7 +26,7 @@
 
         <!-- SCREEN 2: THE YES/NO CHOICE -->
         <div id="screen-2" class="screen hidden">
-            <img id="choice-sticker" src="https://media.tenor.com/2Ap4K8iV6SuC4AAAAi/bubu-dudu-bubu.gif" alt="Bubu Dudu" class="sticker">
+            <div class="emoji-sticker">🧸👋</div>
             <h3 id="choice-question">Are you ready to open your birthday gift? 🎁</h3>
             
             <div class="btn-group">
@@ -37,18 +37,19 @@
 
         <!-- SCREEN 3: MAIN BIRTHDAY WISH & BALLOONS -->
         <div id="screen-3" class="screen hidden">
-            <img src="https://media.tenor.com/w9ZshC_Z2XIAAAAi/bubu-dudu.gif" alt="Bubu Dudu Happy" class="sticker">
+            <div class="emoji-sticker">🥳🎈🎉</div>
             <h1 class="bday-title">Happy Birthday!</h1>
-            <h2 class="bday-name">Anique <br><span class="bhalu-glow">Mine Bhalu♥️🌺🐻🧸🧸</span></h2>
-            <p class="sub-wish">Wishing you the happiest and most wonderful day ever! 🎉🎈</p>
+            <h2 class="bday-name">Anique <br><span class="bhalu-glow">Mine Bhalu Anique ♥️🌺🐻🧸🧸</span></h2>
+            <p class="sub-wish">Wishing you the happiest and most wonderful day ever! 🍾</p>
             <button class="glow-btn" onclick="nextScreen(3, 4)">Next: Special Messages 💌</button>
         </div>
 
-        <!-- SCREEN 4: SPECIAL MESSAGE 1 + CHOCOLATE/BOUQUET GIFT STICKER -->
+        <!-- SCREEN 4: SPECIAL MESSAGE 1 + CHOCOLATE & BOUQUET ACT -->
         <div id="screen-4" class="screen hidden">
             <span class="page-number">Message 1/3</span>
-            <!-- Cute Sticker acting out giving flowers/proposing -->
-            <img src="https://media.tenor.com/z_Z-h9uYw_kAAAAi/bubu-dudu-love.gif" alt="Giving Chocolate and Flowers" class="sticker-large">
+            
+            <!-- Acting out giving chocolates and bouquet (No text explanation) -->
+            <div class="emoji-sticker-large">👩‍❤️&zwj;👨<br>🍫💐💝</div>
             
             <div class="msg-box">
                 <p>"Happy Birthday to my favorite person! You mean the absolute world to me, and I am so incredibly blessed to have you in my life. ⭐"</p>
@@ -59,35 +60,34 @@
         <!-- SCREEN 5: SPECIAL MESSAGE 2 -->
         <div id="screen-5" class="screen hidden">
             <span class="page-number">Message 2/3</span>
-            <!-- Bubu Dudu Hugging Sticker -->
-            <img src="https://media.tenor.com/g0_r7wZ17wIAAAAi/bubu-dudu-hug.gif" alt="Bubu Dudu Happy Moment" class="sticker">
+            <div class="emoji-sticker">🐻❤️🧸</div>
             
             <div class="msg-box">
-                <p>"May this year bring endless happiness, success, and beautiful moments into your life. Keep smiling always, just like this! 🥰💖"</p>
+                <p>"May this year bring endless happiness, success, and beautiful moments into your life. Keep smiling always, my Bhalu! 🥰💖"</p>
             </div>
             <button class="glow-btn" onclick="nextScreen(5, 6)">Next: Final Message 🔒</button>
         </div>
 
-        <!-- SCREEN 6: LAST MESSAGE + CAKE CUTTING GRAND FINALE -->
+        <!-- SCREEN 6: LAST MESSAGE + CAKE CUTTING -->
         <div id="screen-6" class="screen hidden">
             <span class="page-number">Message 3/3</span>
             
-            <!-- Bubu Dudu cutting cake sticker -->
-            <img src="https://media.tenor.com/J3-gYmF5Sg8AAAAi/bubu-dudu-birthday.gif" alt="Bubu Dudu Cake Cutting" class="sticker-large">
+            <!-- Cake Cutting Act (No text explanation) -->
+            <div class="emoji-sticker-large">👩‍❤️&zwj;👨🎂✨<br>🍴🎉</div>
             
             <div class="msg-box">
-                <p>"Thank you for being such an amazing and beautiful part of my journey. Let's celebrate this wonderful moment together! 🎂✨"</p>
+                <p>"Thank you for being such an amazing and beautiful part of my journey. Let's celebrate and cut this cake together! 🎂✨"</p>
             </div>
             
             <hr class="card-divider">
             
-            <h1 class="final-wish">Again Happy Birthday Anique!<br><span class="bhalu-text">Mine Bhalu♥️🌺🐻🧸🧸</span></h1>
+            <h1 class="final-wish">Again Happy Birthday Anique!<br><span class="bhalu-text">Mine Bhalu ♥️🌺🐻🧸🧸</span></h1>
             <button class="glow-btn" onclick="nextScreen(6, 7)">Finish Box ✨</button>
         </div>
 
         <!-- SCREEN 7: FINAL CLOSING NOTE -->
         <div id="screen-7" class="screen hidden">
-            <img src="https://media.tenor.com/On7byS3C-0IAAAAi/bubu-dudu-bubu.gif" alt="Love Hearts" class="sticker">
+            <div class="emoji-sticker">🥰💞💋</div>
             <h1 class="end-heading">Happy Birthday Bhalu ♥️ <br>My Love 😘💕</h1>
             <p class="end-sub">Click below to close the surprise pack.</p>
             <button class="glow-btn close-btn" onclick="closeSurprise()">Finish & Close 🚪</button>
@@ -100,8 +100,7 @@
 
         function playBirthdaySong() {
             const audio = document.getElementById('bday-music');
-            // Direct pure vocal happy birthday standard song
-            audio.src = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"; 
+            audio.volume = 0.8;
             audio.play().catch(e => console.log("Audio waiting for interaction."));
         }
 
@@ -117,16 +116,16 @@
         function handleNoChoice() {
             noClickCount++;
             const questionText = document.getElementById('choice-question');
-            const stickerImg = document.getElementById('choice-sticker');
+            const stickerImg = document.querySelector('#screen-2 .emoji-sticker');
             const noBtn = document.getElementById('no-button');
 
             if (noClickCount === 1) {
                 questionText.innerHTML = "Hey! 😡 Why are you saying No?! Please click YES, it is created just for you!";
-                stickerImg.src = "https://media.tenor.com/83p73wW67VAAAAAi/bubu-dudu-angry.gif";
+                stickerImg.innerHTML = "😤💢👊";
                 noBtn.style.transform = "scale(0.8)";
             } else if (noClickCount === 2) {
-                questionText.innerHTML = "Bubu and Dudu are getting super mad now! 😤 Open it quickly!";
-                stickerImg.src = "https://media.tenor.com/H6bL-m_xJ60AAAAi/bubu-dudu-mad.gif";
+                questionText.innerHTML = "Now I am getting super mad! 😤 Open it quickly!";
+                stickerImg.innerHTML = "😡🔥🗡️";
                 noBtn.style.setProperty("display", "none", "important"); 
             }
         }
@@ -159,8 +158,7 @@
 
         function closeSurprise() {
             window.close();
-            // Fallback if browser blocks window.close
-            document.body.innerHTML = "<div style='text-align:center; margin-top:40vh; font-family:sans-serif;'><h1>Surprise Pack Closed! ♥️</h1><p>You can close this tab now.</p></div>";
+            document.body.innerHTML = "<div style='text-align:center; margin-top:45vh; font-family:sans-serif; color:white;'><h1>Surprise Pack Closed! ♥️</h1><p>You can close this tab now.</p></div>";
         }
     </script>
 </body>

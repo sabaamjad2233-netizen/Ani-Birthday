@@ -53,18 +53,23 @@ h2 {
     margin-bottom: 5px;
 }
 
-.sticker {
-    width: 140px;
-    height: 140px;
-    object-fit: contain;
+/* Big Aesthetic Bouncing Emojis */
+.emoji-sticker {
+    font-size: 5rem;
     margin-bottom: 20px;
+    animation: bounce 2s infinite alternate;
 }
 
-.sticker-large {
-    width: 180px;
-    height: 180px;
-    object-fit: contain;
+.emoji-sticker-large {
+    font-size: 4.5rem;
     margin-bottom: 20px;
+    line-height: 1.2;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
 }
 
 .btn-group {
@@ -191,7 +196,7 @@ h2 {
     box-shadow: 0 5px 15px rgba(157, 78, 221, 0.3);
 }
 
-/* Flying Balloons Layout */
+/* Flying Balloons Effect */
 .balloon {
     position: absolute;
     width: 30px;
