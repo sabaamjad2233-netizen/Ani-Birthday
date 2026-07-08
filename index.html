@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <!-- Your Uploaded WhatsApp Audio File Match -->
+    <!-- Your Uploaded WhatsApp Audio File -->
     <audio id="bday-music" loop>
         <source src="WhatsApp Audio 2026-07-08 at 11.50.26 PM.mpeg" type="audio/mpeg">
     </audio>
@@ -44,11 +44,14 @@
             <button class="glow-btn" onclick="nextScreen(3, 4)">Next: Special Messages 💌</button>
         </div>
 
-        <!-- SCREEN 4: SPECIAL MESSAGE 1 + CHOCOLATE & BOUQUET ACT -->
+        <!-- SCREEN 4: SPECIAL MESSAGE 1 + PICTURE 1 + CHOCOLATE/BOUQUET ACT -->
         <div id="screen-4" class="screen hidden">
             <span class="page-number">Message 1/3</span>
             
-            <!-- Acting out giving chocolates and bouquet (No text explanation) -->
+            <!-- Picture 1 Display with Floating Emojis -->
+            <div class="profile-pic-container">
+                <img src="anique.jpg" alt="Anique 1" class="birthday-pic">
+            </div>
             <div class="emoji-sticker-large">👩‍❤️&zwj;👨<br>🍫💐💝</div>
             
             <div class="msg-box">
@@ -57,9 +60,14 @@
             <button class="glow-btn" onclick="nextScreen(4, 5)">Next Message 💖</button>
         </div>
 
-        <!-- SCREEN 5: SPECIAL MESSAGE 2 -->
+        <!-- SCREEN 5: SPECIAL MESSAGE 2 + PICTURE 2 -->
         <div id="screen-5" class="screen hidden">
             <span class="page-number">Message 2/3</span>
+            
+            <!-- Picture 2 Display -->
+            <div class="profile-pic-container">
+                <img src="anique (2).jpg" alt="Anique 2" class="birthday-pic">
+            </div>
             <div class="emoji-sticker">🐻❤️🧸</div>
             
             <div class="msg-box">
@@ -68,11 +76,14 @@
             <button class="glow-btn" onclick="nextScreen(5, 6)">Next: Final Message 🔒</button>
         </div>
 
-        <!-- SCREEN 6: LAST MESSAGE + CAKE CUTTING -->
+        <!-- SCREEN 6: LAST MESSAGE + PICTURE 3 + CAKE CUTTING -->
         <div id="screen-6" class="screen hidden">
             <span class="page-number">Message 3/3</span>
             
-            <!-- Cake Cutting Act (No text explanation) -->
+            <!-- Picture 3 Display -->
+            <div class="profile-pic-container">
+                <img src="anique (3).jpg" alt="Anique 3" class="birthday-pic">
+            </div>
             <div class="emoji-sticker-large">👩‍❤️&zwj;👨🎂✨<br>🍴🎉</div>
             
             <div class="msg-box">
@@ -101,8 +112,15 @@
         function playBirthdaySong() {
             const audio = document.getElementById('bday-music');
             audio.volume = 0.9;
-            audio.play().catch(e => console.log("Audio waiting for user action."));
+            audio.play().catch(e => console.log("Audio waiting for user click."));
         }
+
+        window.addEventListener('click', () => {
+            const audio = document.getElementById('bday-music');
+            if (audio.paused) {
+                audio.play().catch(e => console.log("Audio triggered..."));
+            }
+        }, { once: true });
 
         function nextScreen(current, next) {
             document.getElementById(`screen-${current}`).classList.add('hidden');
