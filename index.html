@@ -3,103 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Bhalu! 🧸</title>
+    <title>Happy Birthday Anique! 🧸</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Confetti Library for Birthday Effect -->
+    <!-- Confetti & Balloons Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
-    <!-- SCREEN 1: THE MYSTERY BOX -->
-    <div id="welcome-screen" class="screen">
-        <div class="mystery-card">
-            <h2>Hey Anique! 🧸<br>Someone sent you a digital box...</h2>
-            <button class="glow-btn" onclick="openGift()">Tap to Open 🎁</button>
-        </div>
-    </div>
+    <!-- Background Music -->
+    <audio id="bday-music" loop>
+        <source src="https://assets.mixkit.co/active_storage/sfx/123/123-500.wav" type="audio/wav">
+        <!-- Main Backup Bday Song -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    </audio>
 
-    <!-- SCREEN 2: MAIN BIRTHDAY WISH -->
-    <div id="birthday-screen" class="screen main-birthday hidden">
-        <h1 class="bday-title">Happy Birthday!</h1>
-        <div class="bday-name">Anique (Mine Bhalu♥️🌺🐻🧸🧸)</div>
-
-        <!-- Interactive Gifts Grid -->
-        <div class="gifts-container">
-            <div class="gift-box" onclick="revealMessage(1)">
-                <div class="gift-icon">🎁</div>
-                <p>Box 1</p>
-            </div>
-            <div class="gift-box" onclick="revealMessage(2)">
-                <div class="gift-icon">⭐</div>
-                <p>Box 2</p>
-            </div>
-            <div class="gift-box" onclick="revealMessage(3)">
-                <div class="gift-icon">❤️</div>
-                <p>Box 3</p>
-            </div>
+    <div class="card-container">
+        
+        <!-- SCREEN 1: THE WELCOME NOTE -->
+        <div id="screen-1" class="screen">
+            <p class="aesthetic-text">Anique... ✨</p>
+            <h2>Kuch Special Hai Aap Ke Liya... ♥️</h2>
+            <button class="glow-btn" onclick="nextScreen(1, 2); playMusic();">Next 👀</button>
         </div>
 
-        <!-- Dynamic Message Box -->
-        <div class="message-display">
-            <p id="dynamic-message" class="message-text">Tap on any box above to open your virtual gifts! ✨</p>
-        </div>
-    </div>
-
-    <!-- JavaScript to Handle Interactions -->
-    <script>
-        // Birthday Messages (You can edit these lines later!)
-        const messages = {
-            1: "Happy Birthday to my favorite person! Wishing you a year full of happiness, success, and endless laughter. ✨🎉",
-            2: "May all your dreams and wishes come true this year. Keep shining bright like the star you are! ⭐🎈",
-            3: "Thank you for being such an amazing part of my life. You deserve the absolute best today and always! ❤️🐻"
-        };
-
-        // Function to handle opening the main gift screen
-        function openGift() {
-            document.getElementById('welcome-screen').classList.add('hidden');
-            document.getElementById('birthday-screen').classList.remove('hidden');
+        <!-- SCREEN 2: THE YES/NO CHOICE -->
+        <div id="screen-2" class="screen hidden">
+            <!-- Bubu Dudu Waiting Sticker -->
+            <img id="choice-sticker" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW94bms1YmoxZms0ZXp3Y2Z0M3N6ZzJ3YW95Mms0NndpM3h6Y3Z6byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/bYsn69w9Z2Yn98vAsb/giphy.gif" alt="Bubu Dudu" class="sticker">
+            <h3 id="choice-question">Kya aap apna gift open karne ke liye ready hain? 🎁</h3>
             
-            // Trigger beautiful confetti shower
-            var duration = 3 * 1000;
-            var end = Date.now() + duration;
+            <div class="btn-group">
+                <button class="glow-btn yes-btn" onclick="startBirthdayReveal()">Yes, Ready! 😍</button>
+                <button class="glow-btn no-btn" id="no-button" onclick="handleNoChoice()">No 😜</button>
+            </div>
+        </div>
 
+        <!-- SCREEN 3: MAIN BIRTHDAY WISH & BALLOONS -->
+        <div id="screen-3" class="screen hidden">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDh2NTh6Z3Y4Z3Y4Z3Y4Z3Y4Z3Y4Z3Y4Z3Y4Z3Y4Z3Y4Z/108GZIFB7v4gXm/giphy.gif" alt="Bubu Dudu Happy" class="sticker">
+            <h1 class="bday-title">Happy Birthday!</h1>
+            <h2 class="bday-name">Anique <br><span>(Mine Bhalu Anique♥️🌺🐻🧸🧸)</span></h2>
+            <p class="sub-wish">Enjoy your special day! 🎉🎈</p>
+            <button class="glow-btn" onclick="nextScreen(3, 4)">Next: Special Messages 💌</button>
+        </div>
+
+        <!-- SCREEN 4: SPECIAL MESSAGE 1 + CHOCOLATE/BOUQUET GIFT -->
+        <div id="screen-4" class="screen hidden">
+            <span class="page-number">Message 1/3</span>
+            <!-- Girl giving boy bouquet/chocolate sticker -->
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Ztc3Uxd3Ewd3Ewd3Ewd3Ewd3Ewd3Ewd3Ewd3Ewd3Ewd3E/26hpKUNas6u9gkh96/giphy.gif" alt="Giving Gift" class="sticker">
+            
+            <div class="msg-box">
+                <p id="msg-1">"Happy Birthday to my favorite person! Aap mere liye bohot zaroori aur special ho. Yeh chocolate aur flowers aapko happy karne ke liye! 🍫🌸"</p>
+            </div>
+            <button class="glow-btn" onclick="nextScreen(4, 5)">Next Message 💖</button>
+        </div>
+
+        <!-- SCREEN 5: SPECIAL MESSAGE 2 -->
+        <div id="screen-5" class="screen hidden">
+            <span class="page-number">Message 2/3</span>
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3d6b3B6b3B6b3B6b3B6b3B6b3B6b3B6b3B6b3B6b/sdzmaU9AsSxyU/giphy.gif" alt="Bubu Dudu Love" class="sticker">
+            
+            <div class="msg-box">
+                <p id="msg-2">"May all your dreams come true this year. Aap hamesha haste muskurate raho, bilkul is bubu dudu ki tarah! ⭐🎈"</p>
+            </div>
+            <button class="glow-btn" onclick="nextScreen(5, 6)">Next: Last Secret Message 🔒</button>
+        </div>
+
+        <!-- SCREEN 6: LAST MESSAGE + CAKE CUTTING GRAND FINALE -->
+        <div id="screen-6" class="screen hidden">
+            <span class="page-number">Message 3/3</span>
+            
+            <!-- Bubu Dudu cutting cake sticker -->
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3B6M3B6M3B6M3B6M3B6M3B6M3B6M3B6M3B6M3B6M/3o7qE1YN7aBOFPRw8E/giphy.gif" alt="Cake Cutting" class="sticker">
+            
+            <div class="msg-box">
+                <p id="msg-3">"Thank you for being such an amazing part of my life. Chalein ab mil kar cake cut karte hain! 🎂✨"</p>
+            </div>
+            
+            <hr class="card-divider">
+            
+            <h1 class="final-wish">Again Happy Birthday Anique!<br><span class="bhalu-text">Mine Bhalu♥️🌺🐻🧸🧸</span></h1>
+            
+            <!-- Button to trigger celebration bursts again -->
+            <button class="glow-btn" onclick="triggerCelebration()">Celebrate Again! 🍾🎉</button>
+        </div>
+
+    </div>
+
+    <!-- JavaScript logic -->
+    <script>
+        let noClickCount = 0;
+
+        function playMusic() {
+            const audio = document.getElementById('bday-music');
+            // Using a reliable open source happy birthday instrumental audio URL
+            audio.src = "https://html5tutorial.info/media/vincent.mp3"; 
+            audio.play().catch(e => console.log("Audio play delayed till interaction."));
+        }
+
+        function nextScreen(current, next) {
+            document.getElementById(`screen-${current}`).classList.add('hidden');
+            document.getElementById(`screen-${next}`).classList.remove('hidden');
+            
+            if (next === 6) {
+                triggerCelebration();
+            }
+        }
+
+        function handleNoChoice() {
+            noClickCount++;
+            const questionText = document.getElementById('choice-question');
+            const stickerImg = document.getElementById('choice-sticker');
+            const noBtn = document.getElementById('no-button');
+
+            if (noClickCount === 1) {
+                questionText.innerHTML = "Hein?? 😡 Kiun nahi karna open?! Chup chap YES karo, aap ke liye hi hai!";
+                stickerImg.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmtxeWZxeWZxeWZxeWZxeWZxeWZxeWZxeWZxeWZxeWf/3N2ML3U6Yt6F2/giphy.gif"; // Angry sticker
+                noBtn.style.transform = "scale(0.8)";
+            } else if (noClickCount === 2) {
+                questionText.innerHTML = "Bubu Dudu bohot ghusa kar rahe hain ab! 😤 Open karo jaldi se!";
+                stickerImg.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3B6M3B6M3B6M3B6M3B6M3B6M3B6M3B6M3B6M/2Ap4K8iV6SuC4/giphy.gif"; // Super angry sticker
+                noBtn.style.setProperty("display", "none", "important"); // Disappear No button!
+            }
+        }
+
+        function startBirthdayReveal() {
+            nextScreen(2, 3);
+            triggerCelebration();
+            // Start continuous balloons flying simulation
+            setInterval(createBalloon, 400);
+        }
+
+        function triggerCelebration() {
+            // Party poppers / Confetti shower
+            var end = Date.now() + (4 * 1000);
             (function frame() {
-                confetti({
-                    particleCount: 5,
-                    angle: 60,
-                    spread: 55,
-                    origin: { x: 0 },
-                    colors: ['#ff758f', '#ff7fa5', '#ffe4e9']
-                });
-                confetti({
-                    particleCount: 5,
-                    angle: 120,
-                    spread: 55,
-                    origin: { x: 1 },
-                    colors: ['#ff758f', '#ff7fa5', '#ffe4e9']
-                });
-
-                if (Date.now() < end) {
-                    requestAnimationFrame(frame);
-                }
+                confetti({ particleCount: 4, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#ff758f', '#ff7fa5', '#fff'] });
+                confetti({ particleCount: 4, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#ff758f', '#ff7fa5', '#fff'] });
+                if (Date.now() < end) { requestAnimationFrame(frame); }
             }());
         }
 
-        // Function to update the message when a box is clicked
-        function revealMessage(boxId) {
-            const msgElement = document.getElementById('dynamic-message');
-            msgElement.style.opacity = 0; // Smooth fade effect
-            
-            setTimeout(() => {
-                msgElement.innerText = messages[boxId];
-                msgElement.style.opacity = 1;
-                // Pop small confetti burst on click
-                confetti({
-                    particleCount: 30,
-                    spread: 60,
-                    origin: { y: 0.7 }
-                });
-            }, 200);
+        // Floating balloons function
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            const colors = ['#ff758f', '#ff7fa5', '#ffb5a7', '#fcd5ce', '#ffe5ec'];
+            balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            balloon.style.left = Math.random() * 100 + 'vw';
+            balloon.style.animationDuration = Math.random() * 3 + 4 + 's';
+            document.body.appendChild(balloon);
+            setTimeout(() => { balloon.remove(); }, 6000);
         }
     </script>
 </body>
