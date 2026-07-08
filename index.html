@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Anique! 🧸</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Confetti & Balloons Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
-    <!-- Background Music -->
+    <!-- Background Music (100% Working MP3 Direct Link) -->
     <audio id="bday-music" loop>
-        <source src="https://assets.mixkit.co/active_storage/sfx/123/123-500.wav" type="audio/wav">
-        <!-- Main Backup Bday Song -->
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
     </audio>
 
@@ -29,7 +26,7 @@
         <!-- SCREEN 2: THE YES/NO CHOICE -->
         <div id="screen-2" class="screen hidden">
             <!-- Bubu Dudu Waiting Sticker -->
-            <img id="choice-sticker" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW94bms1YmoxZms0ZXp3Y2Z0M3N6ZzJ3YW95Mms0NndpM3h6Y3Z6byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/bYsn69w9Z2Yn98vAsb/giphy.gif" alt="Bubu Dudu" class="sticker">
+            <img id="choice-sticker" src="https://media.tenor.com/2Ap4K8iV6SuC4AAAAi/bubu-dudu-bubu.gif" alt="Bubu Dudu Waiting" class="sticker">
             <h3 id="choice-question">Kya aap apna gift open karne ke liye ready hain? 🎁</h3>
             
             <div class="btn-group">
@@ -40,7 +37,8 @@
 
         <!-- SCREEN 3: MAIN BIRTHDAY WISH & BALLOONS -->
         <div id="screen-3" class="screen hidden">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDh2NTh6Z3Y4Z3Y4Z3Y4Z3Y4Z3Y4Z3Y4Z3Y4Z3Y4Z3Y4Z/108GZIFB7v4gXm/giphy.gif" alt="Bubu Dudu Happy" class="sticker">
+            <!-- Bubu Dudu Happy Dance Sticker -->
+            <img src="https://media.tenor.com/w9ZshC_Z2XIAAAAi/bubu-dudu.gif" alt="Bubu Dudu Happy" class="sticker">
             <h1 class="bday-title">Happy Birthday!</h1>
             <h2 class="bday-name">Anique <br><span>(Mine Bhalu Anique♥️🌺🐻🧸🧸)</span></h2>
             <p class="sub-wish">Enjoy your special day! 🎉🎈</p>
@@ -50,8 +48,8 @@
         <!-- SCREEN 4: SPECIAL MESSAGE 1 + CHOCOLATE/BOUQUET GIFT -->
         <div id="screen-4" class="screen hidden">
             <span class="page-number">Message 1/3</span>
-            <!-- Girl giving boy bouquet/chocolate sticker -->
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Ztc3Uxd3Ewd3Ewd3Ewd3Ewd3Ewd3Ewd3Ewd3Ewd3Ewd3E/26hpKUNas6u9gkh96/giphy.gif" alt="Giving Gift" class="sticker">
+            <!-- Cute Love Sticker (Girl boy interaction) -->
+            <img src="https://media.tenor.com/z_Z-h9uYw_kAAAAi/bubu-dudu-love.gif" alt="Giving Gift" class="sticker">
             
             <div class="msg-box">
                 <p id="msg-1">"Happy Birthday to my favorite person! Aap mere liye bohot zaroori aur special ho. Yeh chocolate aur flowers aapko happy karne ke liye! 🍫🌸"</p>
@@ -62,7 +60,8 @@
         <!-- SCREEN 5: SPECIAL MESSAGE 2 -->
         <div id="screen-5" class="screen hidden">
             <span class="page-number">Message 2/3</span>
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3d6b3B6b3B6b3B6b3B6b3B6b3B6b3B6b3B6b3B6b/sdzmaU9AsSxyU/giphy.gif" alt="Bubu Dudu Love" class="sticker">
+            <!-- Bubu Dudu Hug Sticker -->
+            <img src="https://media.tenor.com/g0_r7wZ17wIAAAAi/bubu-dudu-hug.gif" alt="Bubu Dudu Love" class="sticker">
             
             <div class="msg-box">
                 <p id="msg-2">"May all your dreams come true this year. Aap hamesha haste muskurate raho, bilkul is bubu dudu ki tarah! ⭐🎈"</p>
@@ -74,8 +73,8 @@
         <div id="screen-6" class="screen hidden">
             <span class="page-number">Message 3/3</span>
             
-            <!-- Bubu Dudu cutting cake sticker -->
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3B6M3B6M3B6M3B6M3B6M3B6M3B6M3B6M3B6M3B6M/3o7qE1YN7aBOFPRw8E/giphy.gif" alt="Cake Cutting" class="sticker">
+            <!-- Bubu Dudu Birthday Cake Sticker -->
+            <img src="https://media.tenor.com/J3-gYmF5Sg8AAAAi/bubu-dudu-birthday.gif" alt="Cake Cutting" class="sticker">
             
             <div class="msg-box">
                 <p id="msg-3">"Thank you for being such an amazing part of my life. Chalein ab mil kar cake cut karte hain! 🎂✨"</p>
@@ -85,21 +84,20 @@
             
             <h1 class="final-wish">Again Happy Birthday Anique!<br><span class="bhalu-text">Mine Bhalu♥️🌺🐻🧸🧸</span></h1>
             
-            <!-- Button to trigger celebration bursts again -->
             <button class="glow-btn" onclick="triggerCelebration()">Celebrate Again! 🍾🎉</button>
         </div>
 
     </div>
 
-    <!-- JavaScript logic -->
     <script>
         let noClickCount = 0;
 
         function playMusic() {
             const audio = document.getElementById('bday-music');
-            // Using a reliable open source happy birthday instrumental audio URL
-            audio.src = "https://html5tutorial.info/media/vincent.mp3"; 
-            audio.play().catch(e => console.log("Audio play delayed till interaction."));
+            // Giga direct link for instrumental pleasant track
+            audio.src = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+            audio.volume = 0.6;
+            audio.play().catch(e => console.log("Audio waiting for user click."));
         }
 
         function nextScreen(current, next) {
@@ -119,24 +117,22 @@
 
             if (noClickCount === 1) {
                 questionText.innerHTML = "Hein?? 😡 Kiun nahi karna open?! Chup chap YES karo, aap ke liye hi hai!";
-                stickerImg.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmtxeWZxeWZxeWZxeWZxeWZxeWZxeWZxeWZxeWZxeWf/3N2ML3U6Yt6F2/giphy.gif"; // Angry sticker
+                stickerImg.src = "https://media.tenor.com/83p73wW67VAAAAAi/bubu-dudu-angry.gif"; // Angry gif
                 noBtn.style.transform = "scale(0.8)";
             } else if (noClickCount === 2) {
                 questionText.innerHTML = "Bubu Dudu bohot ghusa kar rahe hain ab! 😤 Open karo jaldi se!";
-                stickerImg.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3B6M3B6M3B6M3B6M3B6M3B6M3B6M3B6M3B6M/2Ap4K8iV6SuC4/giphy.gif"; // Super angry sticker
-                noBtn.style.setProperty("display", "none", "important"); // Disappear No button!
+                stickerImg.src = "https://media.tenor.com/H6bL-m_xJ60AAAAi/bubu-dudu-mad.gif"; // Super mad gif
+                noBtn.style.setProperty("display", "none", "important"); // Disappear button
             }
         }
 
         function startBirthdayReveal() {
             nextScreen(2, 3);
             triggerCelebration();
-            // Start continuous balloons flying simulation
             setInterval(createBalloon, 400);
         }
 
         function triggerCelebration() {
-            // Party poppers / Confetti shower
             var end = Date.now() + (4 * 1000);
             (function frame() {
                 confetti({ particleCount: 4, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#ff758f', '#ff7fa5', '#fff'] });
@@ -145,7 +141,6 @@
             }());
         }
 
-        // Floating balloons function
         function createBalloon() {
             const balloon = document.createElement('div');
             balloon.className = 'balloon';
