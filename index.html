@@ -10,9 +10,9 @@
 </head>
 <body>
 
-    <!-- Your Downloaded Real Vocal Happy Birthday Song -->
+    <!-- Your Uploaded WhatsApp Audio File Match -->
     <audio id="bday-music" loop>
-        <source src="birthday.mp3" type="audio/mp3">
+        <source src="WhatsApp Audio 2026-07-08 at 11.50.26 PM.mpeg" type="audio/mpeg">
     </audio>
 
     <div class="card-container">
@@ -100,8 +100,8 @@
 
         function playBirthdaySong() {
             const audio = document.getElementById('bday-music');
-            audio.volume = 0.8;
-            audio.play().catch(e => console.log("Audio waiting for interaction."));
+            audio.volume = 0.9;
+            audio.play().catch(e => console.log("Audio waiting for user action."));
         }
 
         function nextScreen(current, next) {
