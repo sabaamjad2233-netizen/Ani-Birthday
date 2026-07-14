@@ -6,285 +6,284 @@
     box-sizing: border-box;
 }
 
-/* Premium Galaxy Deep Purple/Black Animated Background */
 body {
     font-family: 'Poppins', sans-serif;
-    background: #020107;
-    background: radial-gradient(circle, #1a0b2e 0%, #05020c 100%);
-    color: #fff;
+    background-color: #030108;
+    color: #ffffff;
     min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Video Background Layer Styling like Video Preview */
+.video-bg-wrapper {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+#bg-video-stream {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.video-overlay-tint {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(16, 6, 36, 0.45) 0%, rgba(3, 1, 8, 0.85) 100%);
+}
+
+/* Welcome Entrance Screen Layout */
+.gate-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-hidden;
-    position: relative;
-}
-
-/* Twinkling Stars Space Effect Layers */
-.stars, .twinkling {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    width: 100%; height: 100%;
-    display: block;
-}
-
-.stars {
-    background: #000 url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123163/stars.png') repeat top center;
-    z-index: 0;
-}
-
-.twinkling {
-    background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/123163/twinkling.png') repeat top center;
-    z-index: 1;
-    animation: move-twink-back 200s linear infinite;
-}
-
-@keyframes move-twink-back {
-    from { background-position: 0 0; }
-    to { background-position: -10000px 5000px; }
-}
-
-/* Video Matching Glassmorphism Premium Container */
-.card-container {
-    width: 90%;
-    max-width: 460px;
-    background: rgba(15, 7, 28, 0.45);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 40px 25px;
-    border-radius: 24px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(114, 9, 183, 0.25);
+    height: 100vh;
     text-align: center;
+    padding: 20px;
+    background: rgba(4, 2, 9, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+}
+.glow-text-slow {
+    font-family: 'Sacramento', cursive;
+    font-size: 5rem;
+    color: #ff758f;
+    text-shadow: 0 0 20px rgba(255,117,143,0.8);
+    margin-bottom: 10px;
+}
+.sub-gate {
+    font-size: 1.1rem;
+    color: #cbbad6;
+    margin-bottom: 30px;
+}
+
+/* Premium Main Hub Design */
+.main-dashboard {
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 20px;
     z-index: 10;
     position: relative;
 }
 
-.screen {
-    transition: all 0.4s ease-in-out;
-}
-
-.hidden {
-    display: none !important;
-}
-
-/* Typography styles */
-.premium-title {
-    font-size: 1.35rem;
-    font-weight: 500;
-    margin-bottom: 30px;
-    line-height: 1.5;
-    color: #f1ecf7;
-}
-
-.aesthetic-text {
-    font-family: 'Sacramento', cursive;
-    font-size: 3.8rem;
-    color: #ff758f;
-    margin-bottom: 5px;
-}
-
-.text-glow {
-    text-shadow: 0 0 15px rgba(255, 117, 143, 0.7);
-}
-
-/* Beautiful Rounded Glowing Frames for Anique's 3 Pictures */
-.profile-pic-container {
-    margin-bottom: 15px;
-    display: inline-block;
-}
-
-.birthday-pic {
-    width: 145px;
-    height: 145px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #ff758f;
-    box-shadow: 0 0 25px rgba(255, 117, 143, 0.6), 0 0 10px rgba(114, 9, 183, 0.5);
-    animation: gentle-pulse 2.5s infinite alternate;
-}
-
-@keyframes gentle-pulse {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.04); }
-}
-
-/* Bouncing Aesthetic Emojis */
-.emoji-sticker {
-    font-size: 4.5rem;
-    margin-bottom: 15px;
-    animation: bounce 2s infinite alternate;
-}
-
-.emoji-sticker-large {
-    font-size: 3.8rem;
-    margin-bottom: 15px;
-    line-height: 1.3;
-    animation: bounce 2s infinite alternate;
-}
-
-@keyframes bounce {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-8px); }
-}
-
-.btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-/* Glowing Interactive Buttons */
-.glow-btn {
-    background: linear-gradient(45deg, #ff758f, #b5179e);
-    border: none;
-    color: white;
-    padding: 14px 32px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgba(181, 23, 158, 0.35);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.glow-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(255, 117, 143, 0.6);
-}
-
-.no-btn {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: none;
-    color: #bfaecf;
-}
-
-.bday-title {
-    font-family: 'Sacramento', cursive;
-    font-size: 4.2rem;
-    color: #fff;
-    text-shadow: 0 0 15px #ff758f, 0 0 35px #b5179e;
-    margin-bottom: 5px;
-}
-
-.bday-name {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #ffb5a7;
-    margin-bottom: 20px;
-}
-
-.bhalu-glow {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #ff758f;
-    display: block;
-    margin-top: 5px;
-    text-shadow: 0 0 10px rgba(255, 117, 143, 0.4);
-}
-
-.sub-wish {
-    font-size: 0.95rem;
-    color: #dfd5ed;
-    line-height: 1.5;
-    margin-bottom: 30px;
-}
-
-.page-number {
-    font-size: 0.75rem;
-    background: rgba(181, 23, 158, 0.25);
-    color: #ff758f;
-    padding: 4px 14px;
+/* Glassmorphism Panel Structures */
+.glass-card {
+    background: rgba(15, 7, 28, 0.6);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 20px;
-    display: inline-block;
-    margin-bottom: 15px;
-    font-weight: 600;
-    border: 1px solid rgba(181, 23, 158, 0.2);
+    padding: 25px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
 }
 
-/* Inset Soft Glass Boxes for Large Paragraphs */
-.msg-box {
-    background: rgba(255, 255, 255, 0.02);
-    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.03);
-    border-radius: 18px;
-    padding: 22px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+.dashboard-header {
+    text-align: center;
     margin-bottom: 25px;
 }
-
-.msg-box p {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: #e4dbf0;
-    font-style: normal;
-    text-align: center;
-}
-
-.card-divider {
-    border: none;
-    border-top: 1px dashed rgba(255, 255, 255, 0.15);
-    margin: 25px 0;
-}
-
-.final-wish {
-    font-size: 1.4rem;
-    color: #ffe5ec;
+.header-banner-container {
+    width: 100%;
+    max-height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
     margin-bottom: 20px;
 }
-
-.bhalu-text {
+.banner-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.main-bday-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #fff, #ff758f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.main-bday-subtitle {
+    font-size: 1.25rem;
     color: #ff758f;
-    font-size: 1.2rem;
-    display: block;
     margin-top: 5px;
 }
-
-.end-heading {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 0 0 20px rgba(255, 117, 143, 0.6);
-    margin-bottom: 10px;
-    line-height: 1.4;
+.intro-wish {
+    font-size: 0.95rem;
+    color: #bfaecf;
+    margin-top: 10px;
 }
 
-.end-sub {
-    font-size: 0.9rem;
-    color: #a999bf;
-    margin-bottom: 25px;
+/* Core Responsive Premium Grid Workspace */
+.premium-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.span-2 { grid-column: span 2; }
+.span-3 { grid-column: span 3; }
+
+.grid-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card-title {
+    font-size: 1.1rem;
+    color: #ffe5ec;
+    margin-bottom: 15px;
+    align-self: flex-start;
+    border-left: 3px solid #ff758f;
+    padding-left: 10px;
+    font-weight: 500;
 }
 
-.close-btn {
-    background: linear-gradient(45deg, #7209b7, #3f37c9);
-    box-shadow: 0 6px 20px rgba(63, 55, 201, 0.35);
+/* Carousel/Photo Slider Framework */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    border-radius: 15px;
+    overflow: hidden;
 }
-
-/* Floating Balloons Effects */
-.balloon {
+.slider-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.slider-controls {
     position: absolute;
-    width: 30px;
-    height: 40px;
+    top: 50%; width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+}
+.slide-btn {
+    background: rgba(0,0,0,0.65);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white; width: 36px; height: 36px;
+    border-radius: 50%; cursor: pointer;
+}
+
+/* Premium Gift Box System Slots */
+.gifts-container {
+    display: flex;
+    gap: 15px;
+}
+.gift-box-item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 100px;
+}
+.gift-box-item:hover { transform: scale(1.06); background: rgba(255,117,143,0.1); }
+.gift-preview-vid, .gift-preview-img {
+    width: 100%; height: 70px;
+    object-fit: cover; border-radius: 8px;
+}
+.gift-label { font-size: 0.8rem; margin-top: 5px; color: #dfd5ed; }
+.gift-reveal-text {
+    font-size: 0.85rem; color: #ff758f; margin-top: 15px; font-weight: 500; text-align: center;
+}
+
+/* Inline Dashboard Small Video Assets */
+.mini-video-container {
+    width: 100%; height: 160px;
+    border-radius: 12px; overflow: hidden;
+}
+.dashboard-inline-vid {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+/* Heart Letters Scrolling Stream Area */
+.letters-scroll-area {
+    width: 100%; max-height: 320px;
+    overflow-y: auto; padding-right: 8px;
+}
+.letters-scroll-area::-webkit-scrollbar { width: 5px; }
+.letters-scroll-area::-webkit-scrollbar-thumb { background: rgba(255,117,143,0.35); border-radius: 10px; }
+
+.letter-paragraph {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px; padding: 18px;
+    margin-bottom: 15px; display: flex;
+    flex-direction: column; align-items: center; gap: 12px;
+}
+.letter-inline-gif {
+    width: 90px; height: 90px;
+    object-fit: contain; border-radius: 8px;
+}
+.letter-paragraph p {
+    font-size: 0.95rem; line-height: 1.6; color: #e4dbf0; text-align: center;
+}
+
+/* Cake Cutting Act Display */
+.cake-interaction-block {
+    position: relative;
+    width: 140px; height: 140px;
+    display: flex; justify-content: center; align-items: center;
+}
+.cake-video-asset {
+    width: 100%; height: 100%;
+    object-fit: cover; border-radius: 50%;
+}
+.cake-emoji {
+    position: absolute; font-size: 3.5rem;
+    cursor: pointer; animation: heartbeat 1.5s infinite alternate;
+}
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+.cake-hint { font-size: 0.9rem; color: #a999bf; margin-top: 10px; }
+
+/* Interactive Premium Navigation Controls */
+.action-btn-premium {
+    background: linear-gradient(45deg, #ff758f, #b5179e);
+    border: none; color: white; padding: 13px 35px;
+    font-size: 1rem; font-weight: 600; border-radius: 50px;
+    cursor: pointer; box-shadow: 0 5px 20px rgba(181,23,158,0.4);
+    transition: all 0.3s ease;
+}
+.action-btn-premium:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255,117,143,0.6); }
+
+.hub-footer { text-align: center; margin-top: 40px; }
+.end-glow-text { font-size: 1.5rem; color: #fff; margin-bottom: 20px; text-shadow: 0 0 15px #ff758f; }
+.close-style { background: linear-gradient(45deg, #7209b7, #3f37c9); }
+
+/* Visibility Animation Classes */
+.hidden { display: none !important; }
+.hidden-fade { opacity: 0; transform: scale(0.95); transition: all 0.6s ease; }
+.fade-in-up { animation: fadeInUp 0.8s ease forwards; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating Balloons Particles */
+.balloon-element {
+    position: absolute; width: 25px; height: 35px;
     border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-    bottom: -50px;
-    opacity: 0.7;
-    animation: floatUp 6s linear infinite;
-    z-index: 1;
+    bottom: -60px; opacity: 0.65;
+    animation: floatVertical 6.5s linear infinite; z-index: 1;
 }
-
-.balloon::after {
-    content: "";
-    position: absolute;
-    bottom: -8px; left: 12px;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    border-top: 8px solid rgba(255,255,255,0.25);
-}
-
-@keyframes floatUp {
+@keyframes floatVertical {
     0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.7; }
-    90% { opacity: 0.7; }
-    100% { transform: translateY(-120vh) rotate(25deg); opacity: 0; }
+    15% { opacity: 0.65; }
+    85% { opacity: 0.65; }
+    100% { transform: translateY(-125vh) rotate(20deg); opacity: 0; }
+}
+
+.termination-layer { text-align: center; margin-top: 45vh; color: white; }
+
+/* Fully Responsive Adjustment Layer for Mobile Views */
+@media (max-width: 768px) {
+    .premium-grid { grid-template-columns: 1fr; }
+    .span-2, .span-3 { grid-column: span 1; }
 }
