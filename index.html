@@ -3,220 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday My Luv! 🎂🎈</title>
+    <title>Happy Birthday Anique! ✨</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Premium Particle Pop Library -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
-    <!-- Video Background -->
-    <div class="video-bg">
+    <!-- Immersive Video Background -->
+    <div class="luxury-video-bg">
         <video autoplay muted loop playsinline>
             <source src="back.mp4" type="video/mp4">
         </video>
-        <div class="overlay"></div>
+        <div class="cosmic-overlay"></div>
     </div>
 
-    <!-- Background Music -->
+    <!-- Background Audio Component -->
     <audio id="bday-music" loop>
         <source src="WhatsApp Audio 2026-07-08 at 11.50.26 PM.mpeg" type="audio/mpeg">
     </audio>
 
-    <!-- Main Slides Container -->
-    <div id="app" class="app-container">
+    <!-- MAIN APP WRAPPER FRAME -->
+    <div id="app-viewport" class="luxury-viewport">
 
-        <!-- SLIDE 1: WELCOME GATE -->
+        <!-- SLIDE 1: THE PREMIUM ENTRANCE -->
         <div class="slide active" id="slide-1">
-            <div class="glass-card content-box">
-                <h1 class="glow-text">Happy Birthday</h1>
-                <p class="subtitle-text">Today the stars align just for you ✨ Welcome to a little galaxy of memories, love, and wishes I made especially for the most amazing person in my universe.</p>
-                <button class="glow-btn" onclick="nextSlide(1); playSong();">Enter the Galaxy 🌌</button>
+            <div class="premium-glass-card panel-glow">
+                <h1 class="luxury-glitch-text">Anique...</h1>
+                <p class="luxury-subtitle">Today the stars align just for you ✨ Welcome to a beautiful galaxy of memories, love, and wishes made especially for the most amazing person in my universe.</p>
+                <button class="premium-action-btn luxury-pulse" onclick="advanceSlide(1); triggerAudioTrack();">Enter the Galaxy 🌌</button>
             </div>
         </div>
 
-        <!-- SLIDE 2: STARRY MEMORIES (6 PHOTO GRID) -->
+        <!-- SLIDE 2: STARRY MEMORIES (THE LUXURY 6-PHOTO GRID) -->
         <div class="slide" id="slide-2">
-            <div class="glass-card content-box">
-                <h2 class="slide-title">Starry Memories ✨</h2>
-                <div class="photo-grid">
-                    <img src="anique.jpg" alt="Memory 1" class="grid-img">
-                    <img src="anique (2).jpg" alt="Memory 2" class="grid-img">
-                    <img src="anique (3).jpg" alt="Memory 3" class="grid-img">
-                    <img src="happy birthday .jpeg" alt="Memory 4" class="grid-img">
-                    <img src="wishes.jpeg" alt="Memory 5" class="grid-img">
-                    <img src="head.jpeg" alt="Memory 6" class="grid-img">
+            <div class="premium-glass-card panel-glow">
+                <h2 class="section-title-premium">✨ Starry Memories</h2>
+                <div class="luxury-photo-grid">
+                    <div class="grid-frame-wrapper"><img src="anique.jpg" alt="Memory 1" class="luxury-grid-img"></div>
+                    <div class="grid-frame-wrapper"><img src="anique (2).jpg" alt="Memory 2" class="luxury-grid-img"></div>
+                    <div class="grid-frame-wrapper"><img src="anique (3).jpg" alt="Memory 3" class="luxury-grid-img"></div>
+                    <div class="grid-frame-wrapper"><img src="happy birthday .jpeg" alt="Memory 4" class="luxury-grid-img"></div>
+                    <div class="grid-frame-wrapper"><img src="wishes.jpeg" alt="Memory 5" class="luxury-grid-img"></div>
+                    <div class="grid-frame-wrapper"><img src="head.jpeg" alt="Memory 6" class="luxury-grid-img"></div>
                 </div>
-                <p class="grid-caption">Every photo is a little constellation—a moment where the sky felt brighter because you were in it.</p>
-                <button class="glow-btn" onclick="nextSlide(2)">Our Journey 🚀</button>
+                <p class="luxury-caption">Every photo is a little constellation — a moment where the sky felt brighter because you were in it.</p>
+                <button class="premium-action-btn" onclick="advanceSlide(2)">Our Journey 🚀</button>
             </div>
         </div>
 
-        <!-- SLIDE 3: OUR JOURNEY (VIDEOS) -->
+        <!-- SLIDE 3: OUR JOURNEY (CINEMATIC MINI-VIDEOS) -->
         <div class="slide" id="slide-3">
-            <div class="glass-card content-box">
-                <h2 class="slide-title">Our Journey 🐻</h2>
-                <div class="video-row">
-                    <video autoplay muted loop playsinline class="journey-vid"><source src="anime.mp4" type="video/mp4"></video>
-                    <video autoplay muted loop playsinline class="journey-vid"><source src="gir.mp4" type="video/mp4"></video>
+            <div class="premium-glass-card panel-glow">
+                <h2 class="section-title-premium">🐻 Our Journey</h2>
+                <div class="luxury-video-row">
+                    <div class="vid-mask-container"><video autoplay muted loop playsinline class="luxury-row-vid"><source src="anime.mp4" type="video/mp4"></video></div>
+                    <div class="vid-mask-container"><video autoplay muted loop playsinline class="luxury-row-vid"><source src="gir.mp4" type="video/mp4"></video></div>
                 </div>
-                <p class="grid-caption">Celebrating YOU—the reason so many of my days feel like a beautiful gift.</p>
-                <button class="glow-btn" onclick="nextSlide(3)">Read My Heart 💌</button>
+                <p class="luxury-caption">Celebrating YOU — the reason so many of my days feel like a beautiful gift.</p>
+                <button class="premium-action-btn" onclick="advanceSlide(3)">Read My Heart 💌</button>
             </div>
         </div>
 
-        <!-- SLIDE 4: THE LOVE LETTER (Aapka custom long text) -->
+        <!-- SLIDE 4: THE ULTIMATE LOVE LETTER BOX -->
         <div class="slide" id="slide-4">
-            <div class="glass-card content-box">
-                <h2 class="slide-title">A Love Note 💖</h2>
-                <div class="letter-scroll">
-                    <p class="letter-para">"Happy Birthday My Luv! 🎂🎈"</p>
-                    <p class="letter-para">"Happy Birthday 🎂❤️ to most favourite person of my life 🥰❤️ i don't know where to start but I have a lot to say to you 🥺👩 today is your birthday and is the best day for you to relax and enjoy the best things in your life 🥰"</p>
-                    <p class="letter-para">"❤️ this day i wanna thank you for being in my life 👫❤️ thanks for your love 💕 and support 👫 thanks for accept all my shortcomings 🥺❤️ and have always been able to make peace with my dark past 🥺🫂"</p>
-                    <p class="letter-para">"i've always waited for this day because i wanted to make you feel special 🥰 and try to make you more happiest you're the best I've in my life 🫂❤️"</p>
-                    <p class="letter-para">"more good life to my best love the one I can tell my soul too 👫❤️ who can relate to me like no one other 🥰 who I can laugh with no extent... promise to always stick by your side through good and bad..... I Love You So Much 🫂🥰"</p>
-                    <p class="letter-para">"All the times fighting with you and feeling nothing without you 👩‍❤️‍💋‍👩🥺 and I'm glad I have this person with whom I can speak my mind without the fear of being judged 🥺🫂"</p>
-                    <p class="letter-para">"you are one of the reasons foreverything that's happened in my life mostly 🥺 from my tantrums to my madness 😂 to my all happiness 💕 and sadness you have always stood there as a rock!!"</p>
-                    <p class="letter-para">"You are someone i can blindly count on always till my last breath 🥺 i wish nothing but happiness, peace, prosperity and love over your life 🤍🫂"</p>
+            <div class="premium-glass-card panel-glow">
+                <h2 class="section-title-premium">💖 A Love Note</h2>
+                <div class="luxury-scroll-box">
+                    <div class="scroll-paragraph-block headline-highlight">
+                        <h3>Happy Birthday My Luv! 🎂🎈</h3>
+                    </div>
+                    <div class="scroll-paragraph-block">
+                        <p>Happy Birthday 🎂❤️ to most favourite person of my life 🥰❤️ i don't know where to start but I have a lot to say to you 🥺👩 today is your birthday and is the best day for you to relax and enjoy the best things in your life 🥰</p>
+                    </div>
+                    <div class="scroll-paragraph-block">
+                        <p>❤️ this day i wanna thank you for being in my life 👫❤️ thanks for your love 💕 and support 👫 thanks for accept all my shortcomings 🥺❤️ and have always been able to make peace with my dark past 🥺🫂</p>
+                    </div>
+                    <div class="scroll-paragraph-block">
+                        <p>i've always waited for this day because i wanted to make you feel special 🥰 and try to make you more happiest you're the best I've in my life 🫂❤️</p>
+                    </div>
+                    <div class="scroll-paragraph-block">
+                        <p>more good life to my best love the one I can tell my soul too 👫❤️ who can relate to me like no one other 🥰 who I can laugh with no extent... promise to always stick by your side through good and bad..... I Love You So Much 🫂🥰</p>
+                    </div>
+                    <div class="scroll-paragraph-block">
+                        <p>All the times fighting with you and feeling nothing without you 👩‍❤️‍💋‍👩🥺 and I'm glad I have this person with whom I can speak my mind without the fear of being judged 🥺🫂</p>
+                    </div>
+                    <div class="scroll-paragraph-block">
+                        <p>you are one of the reasons foreverything that's happened in my life mostly 🥺 from my tantrums to my madness 😂 to my all happiness 💕 and sadness you have always stood there as a rock!!</p>
+                    </div>
+                    <div class="scroll-paragraph-block">
+                        <p>You are someone i can blindly count on always till my last breath 🥺 i wish nothing but happiness, peace, prosperity and love over your life 🤍🫂</p>
+                    </div>
                 </div>
-                <button class="glow-btn" onclick="nextSlide(4)">Next Moments ✨</button>
+                <button class="premium-action-btn" onclick="advanceSlide(4)">Next Moments ✨</button>
             </div>
         </div>
 
-        <!-- SLIDE 5: INNER MOMENTS (MORE VIDEOS) -->
+        <!-- SLIDE 5: INNER CLIPS DISCOVERY AREA -->
         <div class="slide" id="slide-5">
-            <div class="glass-card content-box">
-                <h2 class="slide-title">Cute Moments 🧸</h2>
-                <div class="video-grid-3">
-                    <video autoplay muted loop playsinline class="mini-vid"><source src="cheeks.mp4" type="video/mp4"></video>
-                    <video autoplay muted loop playsinline class="mini-vid"><source src="cheeks 2.mp4" type="video/mp4"></video>
-                    <video autoplay muted loop playsinline class="mini-vid"><source src="rose.mp4" type="video/mp4"></video>
+            <div class="premium-glass-card panel-glow">
+                <h2 class="section-title-premium">🧸 Cute Moments</h2>
+                <div class="luxury-video-grid-3">
+                    <div class="mini-vid-mask"><video autoplay muted loop playsinline class="luxury-mini-vid"><source src="cheeks.mp4" type="video/mp4"></video></div>
+                    <div class="mini-vid-mask"><video autoplay muted loop playsinline class="luxury-mini-vid"><source src="cheeks 2.mp4" type="video/mp4"></video></div>
+                    <div class="mini-vid-mask"><video autoplay muted loop playsinline class="luxury-mini-vid"><source src="rose.mp4" type="video/mp4"></video></div>
                 </div>
-                <button class="glow-btn" onclick="nextSlide(5)">Why You're Special 🌟</button>
+                <button class="premium-action-btn" onclick="advanceSlide(5)">Why You're Special 🌟</button>
             </div>
         </div>
 
-        <!-- SLIDE 6: WHY YOU'RE SPECIAL (INTERACTIVE FLIP GRID) -->
+        <!-- SLIDE 6: INTERACTIVE SURPRISE REVEAL CARDS GRID -->
         <div class="slide" id="slide-6">
-            <div class="glass-card content-box">
-                <h2 class="slide-title">Why You're Special 🌸</h2>
-                <p class="hint-text">Tap each card to reveal a secret... 🤫</p>
-                <div class="secret-grid">
-                    <div class="secret-card" onclick="revealCard(this, 'You make every day feel like a celebration! 🥳')">?</div>
-                    <div class="secret-card" onclick="revealCard(this, 'Your laugh is my absolute favorite sound. 🎵')">?</div>
-                    <div class="secret-card" onclick="revealCard(this, 'You stand by me like a solid rock. 🛡️')">?</div>
-                    <div class="secret-card" onclick="revealCard(this, 'You love me unconditionally with all your heart. ❤️')">?</div>
-                    <div class="secret-card" onclick="revealCard(this, 'My Bhalu, you are my entire universe! 🌌')">?</div>
-                    <div class="secret-card" onclick="revealCard(this, 'I can count on you with my eyes closed. 🫂')">?</div>
+            <div class="premium-glass-card panel-glow">
+                <h2 class="section-title-premium">🌸 Why You're Special</h2>
+                <p class="luxury-hint-text">Tap each interactive card to reveal a reason... 🤫</p>
+                <div class="luxury-secret-grid">
+                    <div class="luxury-reveal-card" onclick="triggerCardReveal(this, 'You make every day feel like a celebration! 🥳')">?</div>
+                    <div class="luxury-reveal-card" onclick="triggerCardReveal(this, 'Your laugh is my absolute favorite melody. 🎵')">?</div>
+                    <div class="luxury-reveal-card" onclick="triggerCardReveal(this, 'You stand by me like a solid unbreakable rock. 🛡️')">?</div>
+                    <div class="luxury-reveal-card" onclick="triggerCardReveal(this, 'You love me unconditionally with all your soul. ❤️')">?</div>
+                    <div class="luxury-reveal-card" onclick="triggerCardReveal(this, 'My Bhalu, you are my entire universe! 🌌')">?</div>
+                    <div class="luxury-reveal-card" onclick="triggerCardReveal(this, 'I can count on you with my eyes blindly closed. 🫂')">?</div>
                 </div>
-                <button class="glow-btn" onclick="nextSlide(6)">Make a Wish 🎂</button>
+                <button class="premium-action-btn" onclick="advanceSlide(6)">Make a Wish 🎂</button>
             </div>
         </div>
 
-        <!-- SLIDE 7: MAKE A WISH (CAKE INTERACTION WITH DANCE.MP4) -->
-        <div id="slide-7" class="slide">
-            <div class="glass-card content-box">
-                <h2 class="slide-title">Make a Wish 🎂</h2>
-                <div class="cake-container">
-                    <video autoplay muted loop playsinline class="cake-vid"><source src="dance.mp4" type="video/mp4"></video>
-                    <div id="cake-emoji" class="cake" onclick="cutCake()">🎂</div>
+        <!-- SLIDE 7: VIRTUAL CAKE BLOW & CUT -->
+        <div class="slide" id="slide-7">
+            <div class="premium-glass-card panel-glow">
+                <h2 class="section-title-premium">🎂 Make a Wish</h2>
+                <div class="luxury-cake-box">
+                    <div class="cake-video-wrapper"><video autoplay muted loop playsinline class="luxury-cake-vid"><source src="dance.mp4" type="video/mp4"></video></div>
+                    <div id="interactive-cake" class="luxury-cake-trigger" onclick="executeCakeCut()">🎂</div>
                 </div>
-                <p id="cake-status" class="hint-text">Tap the cake to blow the candles & cut! 🕯️</p>
-                <button class="glow-btn" onclick="nextSlide(7)">Open Surprise 🎁</button>
+                <p id="cake-prompt-text" class="luxury-hint-text">Tap the cake to blow out candles & cut! 🕯️</p>
+                <button class="premium-action-btn" onclick="advanceSlide(7)">Open Gifts 🎁</button>
             </div>
         </div>
 
-        <!-- SLIDE 8: OPEN SURPRISE (GIFT BOX INTERACTION) -->
-        <div id="slide-8" class="slide">
-            <div class="glass-card content-box">
-                <h2 class="slide-title">Your Surprise Box 🎁</h2>
-                <div class="gift-row">
-                    <div class="gift-box" onclick="openGift(this, '🍫 Chocolates sent with lots of hugs!')">🎁</div>
-                    <div class="gift-box" onclick="openGift(this, '💐 A beautiful bouquet for my favorite human!')">🎁</div>
+        <!-- SLIDE 8: THE SURPRISE BOXES PACK -->
+        <div class="slide" id="slide-8">
+            <div class="premium-glass-card panel-glow">
+                <h2 class="section-title-premium">🎁 Your Surprise Box</h2>
+                <div class="luxury-gift-flex">
+                    <div class="luxury-gift-cube" onclick="triggerGiftReveal(this, '🍫 Wrapped Chocolates sent with huge hugs just for you!')">🎁</div>
+                    <div class="luxury-gift-cube" onclick="triggerGiftReveal(this, '💐 A gorgeous visual bouquet for my favorite human!')">🎁</div>
                 </div>
-                <p id="gift-status" class="hint-text">Click a gift box to open!</p>
-                <button class="glow-btn" onclick="nextSlide(8)">Final Words 🔒</button>
+                <p id="gift-prompt-text" class="luxury-hint-text">Click a premium box to open your gift!</p>
+                <button class="premium-action-btn" onclick="advanceSlide(8)">Final Surprise 🔒</button>
             </div>
         </div>
 
-        <!-- SLIDE 9: GRAND FINALE -->
-        <div id="slide-9" class="slide">
-            <div class="glass-card content-box">
-                <video autoplay muted loop playsinline class="bubu-head-vid"><source src="bubu.mp4" type="video/mp4"></video>
-                <h1 class="final-wish-title">Happy Birthday Bhalu ♥ <br>My Love 😘💕</h1>
-                <p class="final-wish-subtitle">Mine Bhalu ♥️🌺🐻🧸🧸</p>
-                <button class="glow-btn close-btn" onclick="closeSurprise()">Finish Surprises 🚪</button>
+        <!-- SLIDE 9: GRAND FINALE PREMIUM SCREEN -->
+        <div class="slide" id="slide-9">
+            <div class="premium-glass-card panel-glow final-panel-spacing">
+                <div class="bubu-video-circle-wrapper">
+                    <video autoplay muted loop playsinline class="bubu-avatar-vid"><source src="bubu.mp4" type="video/mp4"></video>
+                </div>
+                <h1 class="luxury-finale-title">Happy Birthday Bhalu ♥ <br><span class="gradient-accent-text">My Love 😘💕</span></h1>
+                <p class="luxury-finale-subtitle">Mine Bhalu Anique ♥️🌺🐻🧸🧸</p>
+                <button class="premium-action-btn luxury-close-btn" onclick="executeAppClosure()">Finish Surprises 🚪</button>
             </div>
         </div>
 
-        <!-- DOTS PROGRESS INDICATORS -->
-        <div class="progress-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+        <!-- SLIDER FOOTER DOT PROGRESSION BAR -->
+        <div class="luxury-progress-indicators">
+            <span class="indicator-dot active"></span>
+            <span class="indicator-dot"></span>
+            <span class="indicator-dot"></span>
+            <span class="indicator-dot"></span>
+            <span class="indicator-dot"></span>
+            <span class="indicator-dot"></span>
+            <span class="indicator-dot"></span>
+            <span class="indicator-dot"></span>
+            <span class="indicator-dot"></span>
         </div>
 
     </div>
 
     <script>
-        let currentSlideIdx = 1;
-        const totalSlides = 9;
+        let operationalSlideIdx = 1;
+        const extremeSlideLimit = 9;
 
-        function playSong() {
-            const audio = document.getElementById('bday-music');
-            audio.volume = 0.95;
-            audio.play().catch(e => console.log("Music interaction trigger..."));
+        function triggerAudioTrack() {
+            const track = document.getElementById('bday-music');
+            track.volume = 0.95;
+            track.play().catch(err => console.log("System initialization delay handler."));
         }
 
-        function nextSlide(currentIdx) {
-            if (currentIdx < totalSlides) {
+        function advanceSlide(currentIdx) {
+            if (currentIdx < extremeSlideLimit) {
                 document.getElementById(`slide-${currentIdx}`).classList.remove('active');
-                const nextIdx = currentIdx + 1;
-                document.getElementById(`slide-${nextIdx}`).classList.add('active');
+                const projectedIdx = currentIdx + 1;
+                document.getElementById(`slide-${projectedIdx}`).classList.add('active');
                 
-                // Update dots
-                const dots = document.querySelectorAll('.dot');
-                dots.forEach((dot, idx) => {
-                    if (idx === nextIdx - 1) dot.classList.add('active');
+                const dotElements = document.querySelectorAll('.indicator-dot');
+                dotElements.forEach((dot, index) => {
+                    if (index === projectedIdx - 1) dot.classList.add('active');
                     else dot.classList.remove('active');
                 });
 
-                if (nextIdx === 2 || nextIdx === 6 || nextIdx === 7 || nextIdx === 9) {
-                    triggerPoppers();
+                if ([2, 6, 7, 9].includes(projectedIdx)) {
+                    triggerCosmicPoppers();
+                }
+                if (projectedIdx === 3) {
+                    setInterval(spawnFlyingBalloons, 280);
                 }
             }
         }
 
-        function revealCard(el, msg) {
-            el.innerHTML = msg;
-            el.classList.add('revealed');
-            triggerPoppers();
+        function triggerCardReveal(element, message) {
+            element.innerHTML = message;
+            element.classList.add('revealed-state');
+            triggerCosmicPoppers();
         }
 
-        function cutCake() {
-            document.getElementById('cake-emoji').innerHTML = "🍰🎉";
-            document.getElementById('cake-status').innerHTML = "Wish made successfully! I love you so much! ❤️";
-            triggerPoppers();
+        function executeCakeCut() {
+            document.getElementById('interactive-cake').innerHTML = "🍰🎉";
+            document.getElementById('cake-prompt-text').innerHTML = "Wish made successfully! I love you so much! ❤️";
+            triggerCosmicPoppers();
         }
 
-        function openGift(el, msg) {
-            el.innerHTML = "🎉";
-            document.getElementById('gift-status').innerHTML = msg;
-            triggerPoppers();
+        function triggerGiftReveal(element, message) {
+            element.innerHTML = "🎉";
+            document.getElementById('gift-prompt-text').innerHTML = message;
+            triggerCosmicPoppers();
         }
 
-        function triggerPoppers() {
-            confetti({ particleCount: 35, spread: 60, origin: { y: 0.8 }, colors: ['#ff758f', '#7209b7', '#b5179e'] });
+        function triggerCosmicPoppers() {
+            confetti({ particleCount: 45, spread: 70, origin: { y: 0.75 }, colors: ['#ff758f', '#7209b7', '#b5179e', '#ffffff'] });
         }
 
-        function closeSurprise() {
+        function spawnFlyingBalloons() {
+            const item = document.createElement('div');
+            item.className = 'cosmic-balloon';
+            const colorSwatches = ['#ff758f', '#7209b7', '#b5179e', '#f72585', '#ffe5ec'];
+            item.style.backgroundColor = colorSwatches[Math.floor(Math.random() * colorSwatches.length)];
+            item.style.left = Math.random() * 100 + 'vw';
+            item.style.animationDuration = Math.random() * 3 + 4.5 + 's';
+            document.body.appendChild(item);
+            setTimeout(() => { item.remove(); }, 6500);
+        }
+
+        function executeAppClosure() {
             window.close();
-            document.body.innerHTML = "<div style='text-align:center; margin-top:45vh; font-family:sans-serif; color:white;'><h1>Surprise Pack Closed! ♥️</h1><p>Mine Bhalu Anique ♥️🌺🐻🧸🧸</p></div>";
+            document.body.innerHTML = "<div class='termination-layer-premium'><h1>Surprise Box Closed Safely! ♥️</h1><p>Mine Bhalu Anique ♥️🌺🐻🧸🧸</p></div>";
         }
     </script>
 </body>
