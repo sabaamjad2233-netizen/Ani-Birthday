@@ -5,230 +5,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday My Luv! 🎂🎈</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Confetti Library for Premium Particle Poppers -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
-    <!-- VIDEO BACKGROUND SETUP (Using your back.mp4) -->
-    <div class="video-bg-wrapper">
-        <video id="bg-video-stream" autoplay muted loop playsinline>
+    <!-- Video Background -->
+    <div class="video-bg">
+        <video autoplay muted loop playsinline>
             <source src="back.mp4" type="video/mp4">
         </video>
-        <div class="video-overlay-tint"></div>
+        <div class="overlay"></div>
     </div>
 
-    <!-- Background Music Player -->
+    <!-- Background Music -->
     <audio id="bday-music" loop>
         <source src="WhatsApp Audio 2026-07-08 at 11.50.26 PM.mpeg" type="audio/mpeg">
     </audio>
 
-    <!-- INTRO GATE SCREEN -->
-    <div id="gate-screen" class="gate-container">
-        <h1 class="glow-text-slow">Anique... ✨</h1>
-        <p class="sub-gate">Something incredibly premium & special is waiting for you...</p>
-        <button class="action-btn-premium pulse" onclick="unlockGalaxy()">Enter Your Universe 🌌</button>
-    </div>
+    <!-- Main Slides Container -->
+    <div id="app" class="app-container">
 
-    <!-- MAIN DASHBOARD HUB (Hidden initially) -->
-    <div id="main-hub" class="main-dashboard hidden">
-        
-        <!-- HEADER WISH SECTION WITH HAPPY BIRTHDAY IMAGE -->
-        <header class="dashboard-header glass-card">
-            <div class="header-banner-container">
-                <img src="happy birthday .jpeg" alt="Happy Birthday Banner" class="banner-img">
+        <!-- SLIDE 1: WELCOME GATE -->
+        <div class="slide active" id="slide-1">
+            <div class="glass-card content-box">
+                <h1 class="glow-text">Happy Birthday</h1>
+                <p class="subtitle-text">Today the stars align just for you ✨ Welcome to a little galaxy of memories, love, and wishes I made especially for the most amazing person in my universe.</p>
+                <button class="glow-btn" onclick="nextSlide(1); playSong();">Enter the Galaxy 🌌</button>
             </div>
-            <h1 class="main-bday-title">Happy Birthday My Luv! 🎂🎈</h1>
-            <h2 class="main-bday-subtitle">Mine Bhalu Anique ♥️🌺🐻🧸🧸</h2>
-            <p class="intro-wish">Happy Birthday 🎂❤️ to most favourite person of my life 🥰❤️</p>
-        </header>
-
-        <!-- PREMIUM GRID LAYOUT MATCHING YOUR PREMIUM VIDEO -->
-        <div class="premium-grid">
-            
-            <!-- SLOT 1: INTERACTIVE IMAGE SLIDER/CAROUSEL (Anique's Photos) -->
-            <div class="grid-card glass-card span-2">
-                <h3 class="card-title">✨ Our Beautiful Moments</h3>
-                <div class="slider-container">
-                    <img id="carousel-img" src="anique.jpg" alt="Anique 1" class="slider-img">
-                    <div class="slider-controls">
-                        <button class="slide-btn" onclick="prevSlide()">◀</button>
-                        <button class="slide-btn" onclick="nextSlide()">▶</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SLOT 2: REVEAL GIFT BOX CONTAINERS (Using head.mp4 and wishes.jpeg) -->
-            <div class="grid-card glass-card">
-                <h3 class="card-title">🎁 Interactive Gifts</h3>
-                <div class="gifts-container">
-                    <div class="gift-box-item" onclick="openGiftBox('🍫 Wrapped Chocolates & Love Just For You!')">
-                        <video autoplay muted loop playsinline class="gift-preview-vid">
-                            <source src="head 2.mp4" type="video/mp4">
-                        </video>
-                        <p class="gift-label">Box 1</p>
-                    </div>
-                    <div class="gift-box-item" onclick="openGiftBox('💐 A Premium Visual Bouquet For My Favorite Bhalu!')">
-                        <img src="wishes.jpeg" alt="Wishes Asset" class="gift-preview-img">
-                        <p class="gift-label">Box 2</p>
-                    </div>
-                </div>
-                <p id="gift-message" class="gift-reveal-text"></p>
-            </div>
-
-            <!-- SLOT 3: FLOATING SHORT CLIP SHOWCASE (anime.mp4 & gir.mp4) -->
-            <div class="grid-card glass-card">
-                <h3 class="card-title">🎬 Cute Inner Clips</h3>
-                <div class="mini-video-container">
-                    <video autoplay muted loop playsinline class="dashboard-inline-vid">
-                        <source src="anime.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-
-            <div class="grid-card glass-card span-2">
-                <h3 class="card-title">🐻 Bhalu Moments</h3>
-                <div class="mini-video-container">
-                    <video autoplay muted loop playsinline class="dashboard-inline-vid">
-                        <source src="gir.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-
-            <!-- SLOT 4: THE COMPREHENSIVE TEXT LETTERS AREA -->
-            <div class="grid-card glass-card span-3">
-                <h3 class="card-title">💌 Letters From My Heart</h3>
-                <div class="letters-scroll-area">
-                    
-                    <div class="letter-paragraph">
-                        <video autoplay muted loop playsinline class="letter-inline-gif">
-                            <source src="bubu.mp4" type="video/mp4">
-                        </video>
-                        <p>"i don't know where to start but I have a lot to say to you 🥺👩 today is your birthday and is the best day for you to relax and enjoy the best things in your life 🥰"</p>
-                    </div>
-
-                    <div class="letter-paragraph">
-                        <p>"❤️ this day i wanna thank you for being in my life 👫❤️ thanks for your love 💕 and support 👫 thanks for accept all my shortcomings 🥺❤️ and have always been able to make peace with my dark past 🥺🫂"</p>
-                    </div>
-
-                    <div class="letter-paragraph">
-                        <video autoplay muted loop playsinline class="letter-inline-gif">
-                            <source src="cheeks.mp4" type="video/mp4">
-                        </video>
-                        <p>"i've always waited for this day because i wanted to make you feel special 🥰 and try to make you more happiest you're the best I've in my life 🫂❤️"</p>
-                    </div>
-
-                    <div class="letter-paragraph">
-                        <p>"more good life to my best love the one I can tell my soul too 👫❤️ who can relate to me like no one other 🥰 who I can laugh with no extent promise to always stick by your side through good and bad..... I Love You So Much 🫂🥰"</p>
-                    </div>
-
-                    <div class="letter-paragraph">
-                        <video autoplay muted loop playsinline class="letter-inline-gif">
-                            <source src="cheeks 2.mp4" type="video/mp4">
-                        </video>
-                        <p>"All the times fighting with you and feeling nothing without you 👩‍❤️‍💋‍👩🥺 and I'm glad I have this person with whom I can speak my mind without the fear of being judged 🥺🫂"</p>
-                    </div>
-
-                    <div class="letter-paragraph">
-                        <p>"you are one of the reasons foreverything that's happened in my life mostly 🥺 from my tantrums to my madness 😂 to my all happiness 💕 and sadness you have always stood there as a rock!!"</p>
-                    </div>
-
-                    <div class="letter-paragraph">
-                        <video autoplay muted loop playsinline class="letter-inline-gif">
-                            <source src="rose.mp4" type="video/mp4">
-                        </video>
-                        <p>"You are someone i can blindly count on always till my last breath 🥺 i wish nothing but happiness, peace, prosperity and love over your life 🤍🫂"</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- SLOT 5: INTERACTIVE CELEBRATION CAKE CUTTING (dance.mp4 clip trigger) -->
-            <div class="grid-card glass-card span-3 cake-section">
-                <h3 class="card-title">🎂 Virtual Cake Act</h3>
-                <div class="cake-interaction-block">
-                    <video id="cake-video" autoplay muted loop playsinline class="cake-video-asset">
-                        <source src="dance.mp4" type="video/mp4">
-                    </video>
-                    <div id="cake-graphic" class="cake-emoji" onclick="blowCandle()">🎂</div>
-                </div>
-                <p id="cake-instruction" class="cake-hint">Tap the Cake to Cut & Celebrate! ✨</p>
-            </div>
-
         </div>
 
-        <!-- FOOTER CLOSING -->
-        <footer class="hub-footer">
-            <h2 class="end-glow-text">Happy Birthday Bhalu ♥️ My Love 😘💕</h2>
-            <button class="action-btn-premium close-style" onclick="terminateApp()">Finish Box 🚪</button>
-        </footer>
+        <!-- SLIDE 2: STARRY MEMORIES (6 PHOTO GRID) -->
+        <div class="slide" id="slide-2">
+            <div class="glass-card content-box">
+                <h2 class="slide-title">Starry Memories ✨</h2>
+                <div class="photo-grid">
+                    <img src="anique.jpg" alt="Memory 1" class="grid-img">
+                    <img src="anique (2).jpg" alt="Memory 2" class="grid-img">
+                    <img src="anique (3).jpg" alt="Memory 3" class="grid-img">
+                    <img src="happy birthday .jpeg" alt="Memory 4" class="grid-img">
+                    <img src="wishes.jpeg" alt="Memory 5" class="grid-img">
+                    <img src="head.jpeg" alt="Memory 6" class="grid-img">
+                </div>
+                <p class="grid-caption">Every photo is a little constellation—a moment where the sky felt brighter because you were in it.</p>
+                <button class="glow-btn" onclick="nextSlide(2)">Our Journey 🚀</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: OUR JOURNEY (VIDEOS) -->
+        <div class="slide" id="slide-3">
+            <div class="glass-card content-box">
+                <h2 class="slide-title">Our Journey 🐻</h2>
+                <div class="video-row">
+                    <video autoplay muted loop playsinline class="journey-vid"><source src="anime.mp4" type="video/mp4"></video>
+                    <video autoplay muted loop playsinline class="journey-vid"><source src="gir.mp4" type="video/mp4"></video>
+                </div>
+                <p class="grid-caption">Celebrating YOU—the reason so many of my days feel like a beautiful gift.</p>
+                <button class="glow-btn" onclick="nextSlide(3)">Read My Heart 💌</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: THE LOVE LETTER (Aapka custom long text) -->
+        <div class="slide" id="slide-4">
+            <div class="glass-card content-box">
+                <h2 class="slide-title">A Love Note 💖</h2>
+                <div class="letter-scroll">
+                    <p class="letter-para">"Happy Birthday My Luv! 🎂🎈"</p>
+                    <p class="letter-para">"Happy Birthday 🎂❤️ to most favourite person of my life 🥰❤️ i don't know where to start but I have a lot to say to you 🥺👩 today is your birthday and is the best day for you to relax and enjoy the best things in your life 🥰"</p>
+                    <p class="letter-para">"❤️ this day i wanna thank you for being in my life 👫❤️ thanks for your love 💕 and support 👫 thanks for accept all my shortcomings 🥺❤️ and have always been able to make peace with my dark past 🥺🫂"</p>
+                    <p class="letter-para">"i've always waited for this day because i wanted to make you feel special 🥰 and try to make you more happiest you're the best I've in my life 🫂❤️"</p>
+                    <p class="letter-para">"more good life to my best love the one I can tell my soul too 👫❤️ who can relate to me like no one other 🥰 who I can laugh with no extent... promise to always stick by your side through good and bad..... I Love You So Much 🫂🥰"</p>
+                    <p class="letter-para">"All the times fighting with you and feeling nothing without you 👩‍❤️‍💋‍👩🥺 and I'm glad I have this person with whom I can speak my mind without the fear of being judged 🥺🫂"</p>
+                    <p class="letter-para">"you are one of the reasons foreverything that's happened in my life mostly 🥺 from my tantrums to my madness 😂 to my all happiness 💕 and sadness you have always stood there as a rock!!"</p>
+                    <p class="letter-para">"You are someone i can blindly count on always till my last breath 🥺 i wish nothing but happiness, peace, prosperity and love over your life 🤍🫂"</p>
+                </div>
+                <button class="glow-btn" onclick="nextSlide(4)">Next Moments ✨</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: INNER MOMENTS (MORE VIDEOS) -->
+        <div class="slide" id="slide-5">
+            <div class="glass-card content-box">
+                <h2 class="slide-title">Cute Moments 🧸</h2>
+                <div class="video-grid-3">
+                    <video autoplay muted loop playsinline class="mini-vid"><source src="cheeks.mp4" type="video/mp4"></video>
+                    <video autoplay muted loop playsinline class="mini-vid"><source src="cheeks 2.mp4" type="video/mp4"></video>
+                    <video autoplay muted loop playsinline class="mini-vid"><source src="rose.mp4" type="video/mp4"></video>
+                </div>
+                <button class="glow-btn" onclick="nextSlide(5)">Why You're Special 🌟</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: WHY YOU'RE SPECIAL (INTERACTIVE FLIP GRID) -->
+        <div class="slide" id="slide-6">
+            <div class="glass-card content-box">
+                <h2 class="slide-title">Why You're Special 🌸</h2>
+                <p class="hint-text">Tap each card to reveal a secret... 🤫</p>
+                <div class="secret-grid">
+                    <div class="secret-card" onclick="revealCard(this, 'You make every day feel like a celebration! 🥳')">?</div>
+                    <div class="secret-card" onclick="revealCard(this, 'Your laugh is my absolute favorite sound. 🎵')">?</div>
+                    <div class="secret-card" onclick="revealCard(this, 'You stand by me like a solid rock. 🛡️')">?</div>
+                    <div class="secret-card" onclick="revealCard(this, 'You love me unconditionally with all your heart. ❤️')">?</div>
+                    <div class="secret-card" onclick="revealCard(this, 'My Bhalu, you are my entire universe! 🌌')">?</div>
+                    <div class="secret-card" onclick="revealCard(this, 'I can count on you with my eyes closed. 🫂')">?</div>
+                </div>
+                <button class="glow-btn" onclick="nextSlide(6)">Make a Wish 🎂</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: MAKE A WISH (CAKE INTERACTION WITH DANCE.MP4) -->
+        <div id="slide-7" class="slide">
+            <div class="glass-card content-box">
+                <h2 class="slide-title">Make a Wish 🎂</h2>
+                <div class="cake-container">
+                    <video autoplay muted loop playsinline class="cake-vid"><source src="dance.mp4" type="video/mp4"></video>
+                    <div id="cake-emoji" class="cake" onclick="cutCake()">🎂</div>
+                </div>
+                <p id="cake-status" class="hint-text">Tap the cake to blow the candles & cut! 🕯️</p>
+                <button class="glow-btn" onclick="nextSlide(7)">Open Surprise 🎁</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: OPEN SURPRISE (GIFT BOX INTERACTION) -->
+        <div id="slide-8" class="slide">
+            <div class="glass-card content-box">
+                <h2 class="slide-title">Your Surprise Box 🎁</h2>
+                <div class="gift-row">
+                    <div class="gift-box" onclick="openGift(this, '🍫 Chocolates sent with lots of hugs!')">🎁</div>
+                    <div class="gift-box" onclick="openGift(this, '💐 A beautiful bouquet for my favorite human!')">🎁</div>
+                </div>
+                <p id="gift-status" class="hint-text">Click a gift box to open!</p>
+                <button class="glow-btn" onclick="nextSlide(8)">Final Words 🔒</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: GRAND FINALE -->
+        <div id="slide-9" class="slide">
+            <div class="glass-card content-box">
+                <video autoplay muted loop playsinline class="bubu-head-vid"><source src="bubu.mp4" type="video/mp4"></video>
+                <h1 class="final-wish-title">Happy Birthday Bhalu ♥ <br>My Love 😘💕</h1>
+                <p class="final-wish-subtitle">Mine Bhalu ♥️🌺🐻🧸🧸</p>
+                <button class="glow-btn close-btn" onclick="closeSurprise()">Finish Surprises 🚪</button>
+            </div>
+        </div>
+
+        <!-- DOTS PROGRESS INDICATORS -->
+        <div class="progress-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
 
     </div>
 
     <script>
-        const images = ["anique.jpg", "anique (2).jpg", "anique (3).jpg"];
-        let currentImgIdx = 0;
+        let currentSlideIdx = 1;
+        const totalSlides = 9;
 
-        function unlockGalaxy() {
+        function playSong() {
             const audio = document.getElementById('bday-music');
             audio.volume = 0.95;
-            audio.play().catch(err => console.log("Audio sync active."));
-
-            document.getElementById('gate-screen').classList.add('hidden-fade');
-            setTimeout(() => {
-                document.getElementById('gate-screen').style.display = 'none';
-                const hub = document.getElementById('main-hub');
-                hub.classList.remove('hidden');
-                hub.classList.add('fade-in-up');
-                triggerPremiumPopper();
-                setInterval(generateFloatingBalloons, 350);
-            }, 600);
+            audio.play().catch(e => console.log("Music interaction trigger..."));
         }
 
-        function updateSlider() {
-            document.getElementById('carousel-img').src = images[currentImgIdx];
-        }
-        function nextSlide() {
-            currentImgIdx = (currentImgIdx + 1) % images.length;
-            updateSlider();
-        }
-        function prevSlide() {
-            currentImgIdx = (currentImgIdx - 1 + images.length) % images.length;
-            updateSlider();
+        function nextSlide(currentIdx) {
+            if (currentIdx < totalSlides) {
+                document.getElementById(`slide-${currentIdx}`).classList.remove('active');
+                const nextIdx = currentIdx + 1;
+                document.getElementById(`slide-${nextIdx}`).classList.add('active');
+                
+                // Update dots
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, idx) => {
+                    if (idx === nextIdx - 1) dot.classList.add('active');
+                    else dot.classList.remove('active');
+                });
+
+                if (nextIdx === 2 || nextIdx === 6 || nextIdx === 7 || nextIdx === 9) {
+                    triggerPoppers();
+                }
+            }
         }
 
-        function openGiftBox(messageText) {
-            const displayEl = document.getElementById('gift-message');
-            displayEl.innerHTML = messageText;
-            displayEl.style.opacity = '1';
-            triggerPremiumPopper();
+        function revealCard(el, msg) {
+            el.innerHTML = msg;
+            el.classList.add('revealed');
+            triggerPoppers();
         }
 
-        function blowCandle() {
-            const cake = document.getElementById('cake-graphic');
-            const hint = document.getElementById('cake-instruction');
-            cake.style.display = 'none';
-            hint.innerHTML = "Yay! Cake Cut Successfully With My Bhalu! 🐻❤️";
-            triggerPremiumPopper();
+        function cutCake() {
+            document.getElementById('cake-emoji').innerHTML = "🍰🎉";
+            document.getElementById('cake-status').innerHTML = "Wish made successfully! I love you so much! ❤️";
+            triggerPoppers();
         }
 
-        function triggerPremiumPopper() {
-            confetti({ particleCount: 45, spread: 65, origin: { y: 0.75 }, colors: ['#ff758f', '#7209b7', '#fff'] });
+        function openGift(el, msg) {
+            el.innerHTML = "🎉";
+            document.getElementById('gift-status').innerHTML = msg;
+            triggerPoppers();
         }
 
-        function generateFloatingBalloons() {
-            const balloon = document.createElement('div');
-            balloon.className = 'balloon-element';
-            const palette = ['#ff758f', '#7209b7', '#b5179e', '#f72585'];
-            balloon.style.backgroundColor = palette[Math.floor(Math.random() * palette.length)];
-            balloon.style.left = Math.random() * 100 + 'vw';
-            balloon.style.animationDuration = Math.random() * 3 + 5 + 's';
-            document.body.appendChild(balloon);
-            setTimeout(() => { balloon.remove(); }, 7000);
+        function triggerPoppers() {
+            confetti({ particleCount: 35, spread: 60, origin: { y: 0.8 }, colors: ['#ff758f', '#7209b7', '#b5179e'] });
         }
 
-        function terminateApp() {
-            document.body.innerHTML = "<div class='termination-layer'><h1>Surprise Pack Closed! ♥️</h1><p>Mine Bhalu Anique ♥️🌺🐻🧸🧸</p></div>";
+        function closeSurprise() {
+            window.close();
+            document.body.innerHTML = "<div style='text-align:center; margin-top:45vh; font-family:sans-serif; color:white;'><h1>Surprise Pack Closed! ♥️</h1><p>Mine Bhalu Anique ♥️🌺🐻🧸🧸</p></div>";
         }
     </script>
 </body>
