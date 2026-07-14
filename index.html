@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Anique! 🧸</title>
+    <title>Happy Birthday My Luv! 🎂🎈</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Confetti Library for Party Poppers -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
-    <!-- Your Uploaded WhatsApp Audio File -->
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
     <audio id="bday-music" loop>
         <source src="WhatsApp Audio 2026-07-08 at 11.50.26 PM.mpeg" type="audio/mpeg">
     </audio>
 
-    <div class="card-container">
+    <div class="card-container premium-glass">
         
-        <!-- SCREEN 1: WELCOME NOTE -->
         <div id="screen-1" class="screen">
-            <p class="aesthetic-text">Anique... ✨</p>
-            <h2>Something very special is waiting for you... ♥️</h2>
-            <button class="glow-btn" onclick="nextScreen(1, 2); playBirthdaySong();">Next 👀</button>
+            <p class="aesthetic-text text-glow">Anique... ✨</p>
+            <h2 class="premium-title">Something very special is waiting for you... ♥️</h2>
+            <button class="glow-btn pulse" onclick="nextScreen(1, 2); playBirthdaySong();">Open Surprise 👀</button>
         </div>
 
-        <!-- SCREEN 2: THE YES/NO CHOICE -->
         <div id="screen-2" class="screen hidden">
-            <div class="emoji-sticker">🧸👋</div>
-            <h3 id="choice-question">Are you ready to open your birthday gift? 🎁</h3>
+            <div class="emoji-sticker animated-bounce">🧸👋</div>
+            <h3 id="choice-question" class="question-text">Are you ready to open your birthday gift? 🎁</h3>
             
             <div class="btn-group">
                 <button class="glow-btn yes-btn" onclick="startBirthdayReveal()">Yes, Ready! 😍</button>
@@ -35,72 +34,87 @@
             </div>
         </div>
 
-        <!-- SCREEN 3: MAIN BIRTHDAY WISH & BALLOONS -->
         <div id="screen-3" class="screen hidden">
-            <div class="emoji-sticker">🥳🎈🎉</div>
-            <h1 class="bday-title">Happy Birthday!</h1>
-            <h2 class="bday-name">Anique <br><span class="bhalu-glow">Mine Bhalu Anique ♥️🌺🐻🧸🧸</span></h2>
-            <p class="sub-wish">Wishing you the happiest and most wonderful day ever! 🍾</p>
-            <button class="glow-btn" onclick="nextScreen(3, 4)">Next: Special Messages 💌</button>
+            <div class="emoji-sticker animated-bounce">🥳🎈🎉</div>
+            <h1 class="bday-title tracking-in-expand">Happy Birthday My Luv 🎂🎈</h1>
+            <h2 class="bday-name">Anique <br><span class="bhalu-glow">Mine Bhalu ♥️🌺🐻🧸🧸</span></h2>
+            <p class="sub-wish">Happy Birthday 🎂❤️ to most favourite person of my life 🥰❤️</p>
+            <button class="glow-btn" onclick="nextScreen(3, 4)">Read My Heart 💌</button>
         </div>
 
-        <!-- SCREEN 4: SPECIAL MESSAGE 1 + PICTURE 1 + CHOCOLATE/BOUQUET ACT -->
         <div id="screen-4" class="screen hidden">
-            <span class="page-number">Message 1/3</span>
-            
-            <!-- Picture 1 Display with Floating Emojis -->
+            <span class="page-number">Page 1/5</span>
             <div class="profile-pic-container">
-                <img src="anique.jpg" alt="Anique 1" class="birthday-pic">
+                <img src="anique.jpg" alt="Anique" class="birthday-pic">
             </div>
-            <div class="emoji-sticker-large">👩‍❤️&zwj;👨<br>🍫💐💝</div>
-            
-            <div class="msg-box">
-                <p>"Happy Birthday to my favorite person! You mean the absolute world to me, and I am so incredibly blessed to have you in my life. ⭐"</p>
+            <div class="msg-box glass-inset">
+                <p>"I don't know where to start but I have a lot to say to you 🥺👩 today is your birthday and is the best day for you to relax and enjoy the best things in your life 🥰"</p>
             </div>
-            <button class="glow-btn" onclick="nextScreen(4, 5)">Next Message 💖</button>
+            <button class="glow-btn" onclick="nextScreen(4, 5)">Next Card ✨</button>
         </div>
 
-        <!-- SCREEN 5: SPECIAL MESSAGE 2 + PICTURE 2 -->
         <div id="screen-5" class="screen hidden">
-            <span class="page-number">Message 2/3</span>
-            
-            <!-- Picture 2 Display -->
+            <span class="page-number">Page 2/5</span>
+            <div class="emoji-sticker-large">👫❤️✨</div>
+            <div class="msg-box glass-inset">
+                <p>"This day i wanna thank you for being in my life 👫❤️ thanks for your love 💕 and support 👫 thanks for accept all my shortcomings 🥺❤️ and have always been able to make peace with my dark past 🥺🫂"</p>
+            </div>
+            <button class="glow-btn" onclick="nextScreen(5, 6)">Continue 💖</button>
+        </div>
+
+        <div id="screen-6" class="screen hidden">
+            <span class="page-number">Page 3/5</span>
             <div class="profile-pic-container">
                 <img src="anique (2).jpg" alt="Anique 2" class="birthday-pic">
             </div>
-            <div class="emoji-sticker">🐻❤️🧸</div>
-            
-            <div class="msg-box">
-                <p>"May this year bring endless happiness, success, and beautiful moments into your life. Keep smiling always, my Bhalu! 🥰💖"</p>
+            <div class="msg-box glass-inset">
+                <p>"I've always waited for this day because i wanted to make you feel special 🥰 and try to make you more happiest you're the best I've in my life 🫂❤️"</p>
             </div>
-            <button class="glow-btn" onclick="nextScreen(5, 6)">Next: Final Message 🔒</button>
+            <button class="glow-btn" onclick="nextScreen(6, 7)">Read More 💕</button>
         </div>
 
-        <!-- SCREEN 6: LAST MESSAGE + PICTURE 3 + CAKE CUTTING -->
-        <div id="screen-6" class="screen hidden">
-            <span class="page-number">Message 3/3</span>
-            
-            <!-- Picture 3 Display -->
+        <div id="screen-7" class="screen hidden">
+            <span class="page-number">Page 4/5</span>
+            <div class="emoji-sticker-large">👩‍❤️‍💋‍👩🥺💞</div>
+            <div class="msg-box glass-inset">
+                <p>"More good life to my best love the one I can tell my soul too 👫❤️ who can relate to me like no one other 🥰 who I can laugh with no extent... promise to always stick by your side through good and bad..... I Love You So Much 🫂🥰"</p>
+            </div>
+            <button class="glow-btn" onclick="nextScreen(7, 8)">Next Card 🔒</button>
+        </div>
+
+        <div id="screen-8" class="screen hidden">
+            <span class="page-number">Page 5/5</span>
             <div class="profile-pic-container">
                 <img src="anique (3).jpg" alt="Anique 3" class="birthday-pic">
             </div>
-            <div class="emoji-sticker-large">👩‍❤️&zwj;👨🎂✨<br>🍴🎉</div>
-            
-            <div class="msg-box">
-                <p>"Thank you for being such an amazing and beautiful part of my journey. Let's celebrate and cut this cake together! 🎂✨"</p>
+            <div class="msg-box glass-inset">
+                <p>"All the times fighting with you and feeling nothing without you 👩‍❤️‍💋‍👩🥺 and I'm glad I have this person with whom I can speak my mind without the fear of being judged 🥺🫂"</p>
             </div>
-            
-            <hr class="card-divider">
-            
-            <h1 class="final-wish">Again Happy Birthday Anique!<br><span class="bhalu-text">Mine Bhalu ♥️🌺🐻🧸🧸</span></h1>
-            <button class="glow-btn" onclick="nextScreen(6, 7)">Finish Box ✨</button>
+            <button class="glow-btn" onclick="nextScreen(8, 9)">Deep Note 👑</button>
         </div>
 
-        <!-- SCREEN 7: FINAL CLOSING NOTE -->
-        <div id="screen-7" class="screen hidden">
+        <div id="screen-9" class="screen hidden">
+            <div class="emoji-sticker">🧗‍♂️💎🛡️</div>
+            <div class="msg-box glass-inset">
+                <p>"You are one of the reasons for everything that's happened in my life mostly 🥺 from my tantrums to my madness 😂 to my all happiness 💕 and sadness you have always stood there as a rock!!"</p>
+            </div>
+            <button class="glow-btn" onclick="nextScreen(9, 10)">Final Wish 🎂</button>
+        </div>
+
+        <div id="screen-10" class="screen hidden">
+            <div class="emoji-sticker-large">👩‍❤️&zwj;👨🎂🤍<br>🍫🎉</div>
+            <div class="msg-box glass-inset">
+                <p>"You are someone i can blindly count on always till my last breath 🥺 i wish nothing but happiness, peace, prosperity and love over your life 🤍🫂"</p>
+            </div>
+            <hr class="card-divider">
+            <h1 class="final-wish">Again Happy Birthday Anique!<br><span class="bhalu-text">Mine Bhalu ♥️🌺🐻🧸🧸</span></h1>
+            <button class="glow-btn" onclick="nextScreen(10, 11)">Finish Box ✨</button>
+        </div>
+
+        <div id="screen-11" class="screen hidden">
             <div class="emoji-sticker">🥰💞💋</div>
             <h1 class="end-heading">Happy Birthday Bhalu ♥️ <br>My Love 😘💕</h1>
-            <p class="end-sub">Click below to close the surprise pack.</p>
+            <p class="end-sub">Click below to close your surprise gift box.</p>
             <button class="glow-btn close-btn" onclick="closeSurprise()">Finish & Close 🚪</button>
         </div>
 
@@ -111,14 +125,14 @@
 
         function playBirthdaySong() {
             const audio = document.getElementById('bday-music');
-            audio.volume = 0.9;
-            audio.play().catch(e => console.log("Audio waiting for user click."));
+            audio.volume = 0.95;
+            audio.play().catch(e => console.log("Audio playing on active state."));
         }
 
         window.addEventListener('click', () => {
             const audio = document.getElementById('bday-music');
             if (audio.paused) {
-                audio.play().catch(e => console.log("Audio triggered..."));
+                audio.play().catch(e => console.log("Audio sync complete."));
             }
         }, { once: true });
 
@@ -126,7 +140,7 @@
             document.getElementById(`screen-${current}`).classList.add('hidden');
             document.getElementById(`screen-${next}`).classList.remove('hidden');
             
-            if (next === 3 || next === 6 || next === 7) {
+            if (next === 3 || next === 6 || next === 10 || next === 11) {
                 triggerCelebration();
             }
         }
@@ -151,14 +165,14 @@
         function startBirthdayReveal() {
             nextScreen(2, 3);
             triggerCelebration();
-            setInterval(createBalloon, 350);
+            setInterval(createBalloon, 300);
         }
 
         function triggerCelebration() {
-            var end = Date.now() + (3 * 1000);
+            var end = Date.now() + (3.5 * 1000);
             (function frame() {
-                confetti({ particleCount: 5, angle: 60, spread: 60, origin: { x: 0 }, colors: ['#ff758f', '#ff7fa5', '#fff'] });
-                confetti({ particleCount: 5, angle: 120, spread: 60, origin: { x: 1 }, colors: ['#ff758f', '#ff7fa5', '#fff'] });
+                confetti({ particleCount: 6, angle: 60, spread: 65, origin: { x: 0 }, colors: ['#ff758f', '#b5179e', '#fff', '#7209b7'] });
+                confetti({ particleCount: 6, angle: 120, spread: 65, origin: { x: 1 }, colors: ['#ff758f', '#b5179e', '#fff', '#7209b7'] });
                 if (Date.now() < end) { requestAnimationFrame(frame); }
             }());
         }
@@ -166,7 +180,7 @@
         function createBalloon() {
             const balloon = document.createElement('div');
             balloon.className = 'balloon';
-            const colors = ['#ff758f', '#ff7fa5', '#ffb5a7', '#fcd5ce', '#ffe5ec'];
+            const colors = ['#ff758f', '#7209b7', '#b5179e', '#f72585', '#ffe5ec'];
             balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
             balloon.style.left = Math.random() * 100 + 'vw';
             balloon.style.animationDuration = Math.random() * 3 + 4 + 's';
