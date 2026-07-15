@@ -1,15 +1,8 @@
-// ===============================
-// Loader
-// ===============================
-
 window.addEventListener("load", function () {
-
-setTimeout(() => {
-
-document.getElementById("loader").style.display = "none";
-
-}, 300
-
+    setTimeout(function () {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("hero").style.display = "flex";
+    }, 300);
 });
 
 // ===============================
