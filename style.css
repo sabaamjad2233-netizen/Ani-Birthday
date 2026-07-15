@@ -1,142 +1,104 @@
-/* ===========================
-Google Font
-=========================== */
+<!-- =========================
+Section 5 - Birthday Cake
+========================= -->
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+<section class="section hidden" id="section5">
 
-/* ===========================
-Reset
-=========================== */
+<h2>🎂 Birthday Cake 🎂</h2>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+<div class="cake">
 
-html{
-scroll-behavior:smooth;
-}
+<div class="candle">🕯️</div>
 
-body{
-background:#000;
-overflow-x:hidden;
-color:#fff;
-}
+<div class="cake-body">🎂</div>
 
-/* ===========================
-Background Video
-=========================== */
+</div>
 
-#bgVideo{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-2;
-}
+<p>Make A Beautiful Wish ❤️</p>
 
-/* Dark Overlay */
+<button onclick="nextSection('section6')">
 
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.55);
-z-index:-1;
-}
+Celebrate 🎉
 
-/* ===========================
-Loading Screen
-=========================== */
+</button>
 
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
+</section>
 
-.loader-heart{
-font-size:70px;
-animation:heartbeat 1s infinite;
-}
+<!-- =========================
+Section 6 - Special Video
+========================= -->
 
-#loader h2{
-margin-top:20px;
-font-size:22px;
-letter-spacing:1px;
-}
+<section class="section hidden" id="section6">
 
-@keyframes heartbeat{
+<h2>Special Video ❤️</h2>
 
-0%{transform:scale(1);}
-50%{transform:scale(1.3);}
-100%{transform:scale(1);}
+<video controls width="90%">
 
-}
+<source src="anime.mp4" type="video/mp4">
 
-/* ===========================
-Hero Section
-=========================== */
+Your browser does not support video.
 
-.hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
+</video>
 
-.hero h2{
-font-size:35px;
-font-weight:300;
-}
+<br><br>
 
-.hero h1{
-font-family:'Great Vibes',cursive;
-font-size:90px;
-margin:20px 0;
-color:#ff66b2;
-text-shadow:0 0 20px #ff1493;
-}
+<button onclick="nextSection('section7')">
 
-.hero p{
-max-width:700px;
-font-size:20px;
-line-height:1.8;
-margin-bottom:35px;
-}
+Next 💕
 
-.hero button{
-padding:15px 40px;
-border:none;
-border-radius:50px;
-font-size:18px;
-cursor:pointer;
-background:linear-gradient(45deg,#ff1493,#ff66cc);
-color:white;
-transition:.4s;
-box-shadow:0 0 20px hotpink;
-}
+</button>
 
-.hero button:hover{
-transform:scale(1.08);
-box-shadow:0 0 35px deeppink;
-}
+</section>
 
+<!-- =========================
+Section 7 - Final Wish
+========================= -->
+
+<section class="section hidden" id="section7">
+
+<h2>💖 One Last Wish 💖</h2>
+
+<p>
+
+May Allah always protect you.
+
+May every dream come true.
+
+Stay happy.
+
+Stay blessed.
+
+Stay smiling forever.
+
+Happy Birthday Mine Bhalu ♥️🌺🐻🧸🧸
+
+</p>
+
+<h1>🎉 Happy Birthday Ani ❤️ 🎉</h1>
+
+<button onclick="showFireworks()">
+
+Celebrate 🎆
+
+</button>
+
+</section>
+
+<!-- =========================
+Background Music
+========================= -->
+
+<audio id="music" loop>
+
+<source src="birthday.mp3" type="audio/mpeg">
+
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
 /* ===========================
 Common Sections
 =========================== */
@@ -148,161 +110,43 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:40px;
+padding:40px 20px;
 }
 
 .hidden{
 display:none;
 }
-/* ===========================
-Floating Hearts
-=========================== */
-
-.hearts{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-z-index:1;
-}
-
-.hearts span{
-position:absolute;
-bottom:-100px;
-font-size:25px;
-animation:floatHeart 12s linear infinite;
-opacity:.8;
-}
-
-.hearts span:nth-child(1){
-left:5%;
-animation-duration:8s;
-}
-
-.hearts span:nth-child(2){
-left:18%;
-animation-duration:10s;
-}
-
-.hearts span:nth-child(3){
-left:32%;
-animation-duration:12s;
-}
-
-.hearts span:nth-child(4){
-left:48%;
-animation-duration:9s;
-}
-
-.hearts span:nth-child(5){
-left:62%;
-animation-duration:11s;
-}
-
-.hearts span:nth-child(6){
-left:76%;
-animation-duration:8s;
-}
-
-.hearts span:nth-child(7){
-left:88%;
-animation-duration:13s;
-}
-
-.hearts span:nth-child(8){
-left:95%;
-animation-duration:10s;
-}
-
-@keyframes floatHeart{
-
-0%{
-transform:translateY(0) rotate(0deg);
-opacity:0;
-}
-
-20%{
-opacity:1;
-}
-
-100%{
-transform:translateY(-120vh) rotate(360deg);
-opacity:0;
-}
-
-}
-
-/* ===========================
-Glass Card
-=========================== */
 
 .section h2{
-
-font-size:45px;
-margin-bottom:20px;
+font-size:42px;
+margin-bottom:25px;
 color:#ff80bf;
-
 }
 
 .section p{
-
-max-width:750px;
-
-font-size:19px;
-
+max-width:800px;
+font-size:18px;
 line-height:1.8;
-
-background:rgba(255,255,255,.08);
-
-padding:25px;
-
-border-radius:20px;
-
-backdrop-filter:blur(10px);
-
-border:1px solid rgba(255,255,255,.2);
-
-box-shadow:0 0 25px rgba(255,20,147,.3);
-
 }
 
 /* ===========================
-Buttons
+Glass Letter
 =========================== */
 
-.section button{
-
-margin-top:35px;
-
-padding:15px 40px;
-
-border:none;
-
-border-radius:50px;
-
-cursor:pointer;
-
-font-size:18px;
-
-background:linear-gradient(45deg,#ff1493,#ff66cc);
-
-color:white;
-
-transition:.4s;
-
-box-shadow:0 0 18px hotpink;
-
+.letter{
+width:90%;
+max-width:800px;
+padding:30px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(15px);
+border-radius:25px;
+border:1px solid rgba(255,255,255,.2);
+box-shadow:0 0 25px rgba(255,20,147,.4);
 }
 
-.section button:hover{
-
-transform:scale(1.07);
-
-box-shadow:0 0 35px deeppink;
-
+.letter p{
+font-size:18px;
+line-height:1.9;
 }
 
 /* ===========================
@@ -310,39 +154,45 @@ Gallery
 =========================== */
 
 .gallery{
-
 display:grid;
-
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
 gap:20px;
-
 width:90%;
-
-margin-top:40px;
-
+margin-top:30px;
 }
 
 .gallery img{
-
 width:100%;
-
 height:280px;
-
 object-fit:cover;
-
 border-radius:20px;
-
 transition:.5s;
-
-box-shadow:0 0 25px rgba(255,20,147,.4);
-
+box-shadow:0 0 20px rgba(255,20,147,.4);
 }
 
 .gallery img:hover{
-
 transform:scale(1.08);
+}
 
+/* ===========================
+Buttons
+=========================== */
+
+.section button{
+margin-top:35px;
+padding:15px 40px;
+border:none;
+border-radius:50px;
+font-size:18px;
+cursor:pointer;
+background:linear-gradient(45deg,#ff1493,#ff66cc);
+color:#fff;
+transition:.4s;
+box-shadow:0 0 20px hotpink;
+}
+
+.section button:hover{
+transform:scale(1.08);
 }
 
 /* ===========================
@@ -350,40 +200,26 @@ Gift Box
 =========================== */
 
 .gift-box{
-
 font-size:120px;
-
 cursor:pointer;
-
-margin:40px 0;
-
+margin:35px 0;
 animation:bounce 2s infinite;
-
-transition:.3s;
-
+transition:.4s;
 }
 
 .gift-box:hover{
-
 transform:scale(1.2);
-
 }
 
 @keyframes bounce{
-
 0%,100%{
-
 transform:translateY(0);
-
 }
-
 50%{
-
 transform:translateY(-18px);
-
+}
 }
 
-}
 /* ===========================
 Cake
 =========================== */
@@ -392,8 +228,7 @@ Cake
 display:flex;
 flex-direction:column;
 align-items:center;
-justify-content:center;
-margin:40px 0;
+margin:30px 0;
 }
 
 .candle{
@@ -403,40 +238,31 @@ animation:flicker .8s infinite alternate;
 
 .cake-body{
 font-size:140px;
-animation:cakeZoom 2s ease-in-out infinite;
+animation:zoomCake 2s infinite;
 }
 
 @keyframes flicker{
-0%{
-transform:rotate(-2deg);
-}
-100%{
-transform:rotate(2deg);
-}
+from{transform:rotate(-2deg);}
+to{transform:rotate(2deg);}
 }
 
-@keyframes cakeZoom{
-0%,100%{
-transform:scale(1);
+@keyframes zoomCake{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.08);}
 }
-50%{
-transform:scale(1.08);
-}
-}
-
 /* ===========================
 Final Heading
 =========================== */
 
 .section h1{
-margin-top:30px;
-font-size:70px;
 font-family:'Great Vibes',cursive;
+font-size:70px;
+margin-top:25px;
 color:#ff66b2;
 text-shadow:
-0 0 10px #ff66b2,
-0 0 20px #ff1493,
-0 0 40px hotpink;
+0 0 10px hotpink,
+0 0 20px deeppink,
+0 0 40px #ff1493;
 animation:glow 2s infinite alternate;
 }
 
@@ -444,17 +270,28 @@ animation:glow 2s infinite alternate;
 
 from{
 text-shadow:
-0 0 10px #ff66b2,
-0 0 20px hotpink;
+0 0 10px hotpink,
+0 0 20px deeppink;
 }
 
 to{
 text-shadow:
 0 0 20px white,
-0 0 40px deeppink,
-0 0 60px hotpink;
+0 0 40px hotpink,
+0 0 70px deeppink;
 }
 
+}
+
+/* ===========================
+Video
+=========================== */
+
+video{
+width:90%;
+max-width:900px;
+border-radius:20px;
+box-shadow:0 0 30px rgba(255,20,147,.5);
 }
 
 /* ===========================
@@ -493,16 +330,15 @@ font-size:17px;
 }
 
 .section h2{
-font-size:32px;
+font-size:30px;
 }
 
 .section h1{
-font-size:48px;
+font-size:46px;
 }
 
 .section p{
 font-size:16px;
-padding:18px;
 }
 
 .gallery{
@@ -523,7 +359,7 @@ font-size:100px;
 
 .hero button,
 .section button{
-padding:12px 30px;
+padding:12px 28px;
 font-size:16px;
 }
 
@@ -532,7 +368,7 @@ font-size:16px;
 @media(max-width:480px){
 
 .hero h1{
-font-size:48px;
+font-size:46px;
 }
 
 .hero h2{
@@ -544,202 +380,19 @@ font-size:15px;
 }
 
 .section h2{
-font-size:28px;
+font-size:26px;
 }
 
 .section h1{
-font-size:40px;
+font-size:38px;
 }
 
-.loader-heart{
-font-size:55px;
+#loader h1{
+font-size:60px;
 }
 
 #loader h2{
 font-size:18px;
-}
-
-}
-/* ===================================
-Premium Love Letter
-=================================== */
-
-.letter{
-
-width:90%;
-max-width:800px;
-padding:35px;
-background:rgba(255,255,255,.12);
-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.25);
-border-radius:25px;
-box-shadow:0 0 40px rgba(255,20,147,.4);
-margin-top:30px;
-
-}
-
-.letter h3{
-
-font-size:35px;
-margin-bottom:20px;
-color:#ff8fcf;
-font-family:'Great Vibes',cursive;
-
-}
-
-.letter p{
-
-font-size:18px;
-line-height:1.9;
-background:none;
-box-shadow:none;
-padding:0;
-
-}
-
-/* ===================================
-Premium Image Slider
-=================================== */
-
-.slider{
-
-width:90%;
-max-width:900px;
-height:500px;
-margin:40px auto;
-overflow:hidden;
-border-radius:25px;
-position:relative;
-box-shadow:0 0 35px rgba(255,20,147,.5);
-
-}
-
-.slide{
-
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:0;
-transition:1s;
-
-}
-
-.slide.active{
-
-opacity:1;
-
-}
-
-/* ===================================
-Glow Animation
-=================================== */
-
-@keyframes neonGlow{
-
-0%{
-
-box-shadow:0 0 15px hotpink;
-
-}
-
-50%{
-
-box-shadow:0 0 40px deeppink;
-
-}
-
-100%{
-
-box-shadow:0 0 15px hotpink;
-
-}
-
-}
-
-.letter,
-.slider{
-
-animation:neonGlow 2s infinite;
-
-}
-
-/* ===================================
-Floating Stars
-=================================== */
-
-body::before{
-
-content:"";
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background-image:
-
-radial-gradient(white 1px, transparent 1px);
-
-background-size:50px 50px;
-
-opacity:.15;
-
-pointer-events:none;
-
-animation:starsMove 25s linear infinite;
-
-}
-
-@keyframes starsMove{
-
-from{
-
-transform:translateY(0);
-
-}
-
-to{
-
-transform:translateY(-150px);
-
-}
-
-}
-
-/* ===================================
-Responsive
-=================================== */
-
-@media(max-width:768px){
-
-.slider{
-
-height:300px;
-
-}
-
-.letter{
-
-padding:20px;
-
-}
-
-.letter h3{
-
-font-size:28px;
-
-}
-
-.letter p{
-
-font-size:16px;
-
 }
 
 }

@@ -4,20 +4,15 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday My Love ❤️</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<title>Happy Birthday Mine Bhalu ❤️</title>
 
 <link rel="stylesheet" href="style.css">
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
 </head>
 
@@ -29,9 +24,9 @@ Loading Screen
 
 <div id="loader">
 
-<div class="loader-heart">❤️</div>
+<h1>❤️</h1>
 
-<h2>Preparing Something Special...</h2>
+<h2>Preparing Your Surprise...</h2>
 
 </div>
 
@@ -41,7 +36,7 @@ Background Video
 
 <video autoplay muted loop playsinline id="bgVideo">
 
-<source src="videos/background.mp4" type="video/mp4">
+<source src="back.mp4" type="video/mp4">
 
 </video>
 
@@ -54,20 +49,12 @@ Floating Hearts
 <div class="hearts">
 
 <span>❤️</span>
-
-<span>🤍</span>
-
-<span>💖</span>
-
 <span>💕</span>
-
-<span>💝</span>
-
-<span>💗</span>
-
+<span>💖</span>
 <span>💞</span>
-
 <span>💘</span>
+<span>🌹</span>
+<span>🧸</span>
 
 </div>
 
@@ -75,23 +62,25 @@ Floating Hearts
 Hero Section
 ========================= -->
 
-<section class="hero">
+<section class="hero" id="hero">
 
-<h2>Happy Birthday</h2>
+<h2>Happy Birthday Mine Bhalu ♥️🌺🐻🧸🧸</h2>
 
 <h1>Ani ❤️</h1>
 
 <p>
 
-Today is your special day.
+Today is all about you.
 
-I made something beautiful only for you.
+May Allah always keep you smiling.
+
+You are the most beautiful part of my life.
 
 </p>
 
 <button onclick="startJourney()">
 
-Start Surprise ✨
+Start Surprise ❤️
 
 </button>
 
@@ -101,47 +90,48 @@ Start Surprise ✨
 Section 1
 ========================= -->
 
-<section class="hidden section" id="section1">
+<section class="section hidden" id="section1">
 
-<h2>For My Favourite Person ❤️</h2>
+<h2>For My Jaan ❤️</h2>
 
 <p>
 
-Every moment with you feels magical.
+You are my happiness.
 
-Your smile is my happiness.
+You are my peace.
 
-Your laugh is my peace.
+You are my favourite person.
 
-Thank you for existing.
+May Allah always protect you.
+
+Happy Birthday My Love ❤️
 
 </p>
 
 <button onclick="nextSection('section2')">
 
-Continue ➜
+Next ❤️
 
 </button>
 
 </section>
-
 <!-- =========================
-Section 2
+Section 2 - Memories
 ========================= -->
 
-<section class="hidden section" id="section2">
+<section class="section hidden" id="section2">
 
 <h2>Our Beautiful Memories 📸</h2>
 
 <div class="gallery">
 
-<img src="images/photo1.jpg">
+<img src="anique.jpg" alt="Photo 1">
 
-<img src="images/photo2.jpg">
+<img src="anique (2).jpg" alt="Photo 2">
 
-<img src="images/photo3.jpg">
+<img src="anique (3).jpg" alt="Photo 3">
 
-<img src="images/photo4.jpg">
+<img src="wishes.jpeg" alt="Photo 4">
 
 </div>
 
@@ -154,24 +144,38 @@ Next ❤️
 </section>
 
 <!-- =========================
-Section 3
+Section 3 - Love Letter
 ========================= -->
 
-<section class="hidden section" id="section3">
+<section class="section hidden" id="section3">
 
-<h2>Special Message 💌</h2>
+<h2>💌 A Letter For My Jaan</h2>
+
+<div class="letter">
 
 <p>
 
-No matter where life takes us,
+My Dear Ani ❤️
 
-I will always pray for your happiness.
+<br><br>
 
-May your smile never fade.
+May Allah always keep you happy.
 
-Happy Birthday Once Again ❤️
+May every dream of yours come true.
+
+Thank you for being the most beautiful part of my life.
+
+You are my happiness.
+
+You are my smile.
+
+You are my peace.
+
+Happy Birthday Mine Bhalu ♥️🌺🐻🧸🧸
 
 </p>
+
+</div>
 
 <button onclick="nextSection('section4')">
 
@@ -180,29 +184,31 @@ Open Gift 🎁
 </button>
 
 </section>
+
 <!-- =========================
-Section 4 - Gift Box
+Section 4 - Gift
 ========================= -->
 
-<section class="hidden section" id="section4">
+<section class="section hidden" id="section4">
 
 <h2>Your Special Gift 🎁</h2>
 
 <div class="gift-box" onclick="openGift()">
+
 🎁
+
 </div>
 
-<p>Click the Gift Box</p>
+<p>Click the Gift Box ❤️</p>
 
 </section>
-
 <!-- =========================
-Section 5 - Cake
+Section 5 - Birthday Cake
 ========================= -->
 
-<section class="hidden section" id="section5">
+<section class="section hidden" id="section5">
 
-<h2>Birthday Cake 🎂</h2>
+<h2>🎂 Birthday Cake 🎂</h2>
 
 <div class="cake">
 
@@ -212,7 +218,7 @@ Section 5 - Cake
 
 </div>
 
-<p>Make a Wish ✨</p>
+<p>Make A Beautiful Wish ❤️</p>
 
 <button onclick="nextSection('section6')">
 
@@ -223,16 +229,18 @@ Celebrate 🎉
 </section>
 
 <!-- =========================
-Section 6 - Birthday Video
+Section 6 - Special Video
 ========================= -->
 
-<section class="hidden section" id="section6">
+<section class="section hidden" id="section6">
 
 <h2>Special Video ❤️</h2>
 
 <video controls width="90%">
 
-<source src="videos/intro.mp4" type="video/mp4">
+<source src="anime.mp4" type="video/mp4">
+
+Your browser does not support video.
 
 </video>
 
@@ -240,119 +248,41 @@ Section 6 - Birthday Video
 
 <button onclick="nextSection('section7')">
 
-Next 💖
+Next 💕
 
 </button>
 
 </section>
 
 <!-- =========================
-Section 7 - Final Message
+Section 7 - Final Wish
 ========================= -->
 
-<section class="hidden section" id="section7">
+<section class="section hidden" id="section7">
 
-<h2>I Have Only One Wish ❤️</h2>
+<h2>💖 One Last Wish 💖</h2>
 
 <p>
 
 May Allah always protect you.
 
-May every dream of yours come true.
+May every dream come true.
 
-Thank you for being the most beautiful part of my life.
+Stay happy.
 
-Happy Birthday My Love ❤️
+Stay blessed.
 
-</p>
+Stay smiling forever.
 
-<h1>🎉 Happy Birthday Ani 🎉</h1>
-
-</section>
-<!-- =========================
-Premium Love Letter
-========================= -->
-
-<section class="hidden section" id="section8">
-
-<h2>💌 A Letter For You</h2>
-
-<div class="letter">
-
-<h3>My Dearest Ani ❤️</h3>
-
-<p id="typingText">
-
-Every day with you is a beautiful memory.
-You make my life brighter, happier and more meaningful.
-On your birthday I pray that Allah blesses you with endless happiness,
-good health, success and lots of beautiful moments.
-Thank you for being part of my life.
-Happy Birthday My Love ❤️
+Happy Birthday Mine Bhalu ♥️🌺🐻🧸🧸
 
 </p>
 
-</div>
-
-<button onclick="nextSection('section9')">
-Next Surprise ✨
-</button>
-
-</section>
-
-<!-- =========================
-Premium Photo Slider
-========================= -->
-
-<section class="hidden section" id="section9">
-
-<h2>📸 Beautiful Memories</h2>
-
-<div class="slider">
-
-<img src="images/photo1.jpg" class="slide active">
-
-<img src="images/photo2.jpg" class="slide">
-
-<img src="images/photo3.jpg" class="slide">
-
-<img src="images/photo4.jpg" class="slide">
-
-</div>
-
-<button onclick="nextSection('section10')">
-
-Continue ❤️
-
-</button>
-
-</section>
-
-<!-- =========================
-Final Surprise
-========================= -->
-
-<section class="hidden section" id="section10">
-
-<h2>✨ One Last Surprise ✨</h2>
-
-<h1>I Love You ❤️</h1>
-
-<p>
-
-No matter what happens,
-I'll always pray for your happiness.
-
-May every birthday bring more success,
-more smiles and endless blessings.
-
-🎂 Happy Birthday Ani 🎂
-
-</p>
+<h1>🎉 Happy Birthday Ani ❤️ 🎉</h1>
 
 <button onclick="showFireworks()">
 
-Celebrate 🎉
+Celebrate 🎆
 
 </button>
 
@@ -364,7 +294,7 @@ Background Music
 
 <audio id="music" loop>
 
-<source src="music/birthday.mp3" type="audio/mpeg">
+<source src="birthday.mp3" type="audio/mpeg">
 
 </audio>
 

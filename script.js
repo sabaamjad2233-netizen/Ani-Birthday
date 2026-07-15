@@ -18,7 +18,7 @@ document.getElementById("loader").style.display = "none";
 
 function startJourney() {
 
-document.querySelector(".hero").style.display = "none";
+document.getElementById("hero").style.display = "none";
 
 document.getElementById("section1").style.display = "flex";
 
@@ -26,9 +26,9 @@ playMusic();
 
 confetti({
 
-particleCount:180,
+particleCount:200,
 
-spread:90,
+spread:120,
 
 origin:{y:0.6}
 
@@ -42,7 +42,7 @@ origin:{y:0.6}
 
 function nextSection(nextId){
 
-let sections=document.querySelectorAll(".section");
+const sections=document.querySelectorAll(".section");
 
 sections.forEach(section=>{
 
@@ -64,7 +64,7 @@ confetti({
 
 particleCount:120,
 
-spread:70
+spread:80
 
 });
 
@@ -78,24 +78,23 @@ function playMusic(){
 
 const music=document.getElementById("music");
 
+if(music){
+
 music.play().catch(()=>{
 
-console.log("Autoplay blocked by browser");
+console.log("Autoplay blocked");
 
 });
 
 }
+
+}
+
 // ===============================
 // Gift Box
 // ===============================
 
-function openGift() {
-
-confetti({
-particleCount:300,
-spread:180,
-origin:{y:0.6}
-});
+function openGift(){
 
 const gift=document.querySelector(".gift-box");
 
@@ -103,7 +102,13 @@ gift.innerHTML="💖";
 
 gift.style.transform="scale(1.3)";
 
-gift.style.transition="0.5s";
+confetti({
+
+particleCount:300,
+
+spread:180
+
+});
 
 setTimeout(()=>{
 
@@ -114,135 +119,8 @@ nextSection("section5");
 }
 
 // ===============================
-// Cake Celebration
+// Fireworks
 // ===============================
-
-function celebrateCake(){
-
-confetti({
-particleCount:250,
-spread:150,
-origin:{y:0.5}
-});
-
-alert("🎂 Happy Birthday Ani ❤️");
-
-}
-
-// ===============================
-// Auto Confetti Every 8 Seconds
-// ===============================
-
-setInterval(()=>{
-
-confetti({
-
-particleCount:60,
-
-spread:60,
-
-origin:{
-x:Math.random(),
-y:Math.random()-0.2
-}
-
-});
-
-},8000);
-
-// ===============================
-// Keyboard Shortcut
-// Press C for Celebration
-// ===============================
-
-document.addEventListener("keydown",function(e){
-
-if(e.key==="c" || e.key==="C"){
-
-confetti({
-
-particleCount:350,
-
-spread:180
-
-});
-
-}
-
-});
-
-// ===============================
-// End Message
-// ===============================
-
-console.log("❤️ Happy Birthday Website Loaded Successfully ❤️");
-// =====================================
-// Premium Image Slider
-// =====================================
-
-let currentSlide = 0;
-
-const slides = document.querySelectorAll(".slide");
-
-function autoSlider() {
-
-if(slides.length===0) return;
-
-slides.forEach(slide=>{
-
-slide.classList.remove("active");
-
-});
-
-currentSlide++;
-
-if(currentSlide>=slides.length){
-
-currentSlide=0;
-
-}
-
-slides[currentSlide].classList.add("active");
-
-}
-
-setInterval(autoSlider,3000);
-
-// =====================================
-// Typewriter Effect
-// =====================================
-
-const typingText=document.getElementById("typingText");
-
-if(typingText){
-
-const message=typingText.innerHTML;
-
-typingText.innerHTML="";
-
-let i=0;
-
-function typeWriter(){
-
-if(i<message.length){
-
-typingText.innerHTML+=message.charAt(i);
-
-i++;
-
-setTimeout(typeWriter,35);
-
-}
-
-}
-
-setTimeout(typeWriter,800);
-
-}
-
-// =====================================
-// Fireworks Celebration
-// =====================================
 
 function showFireworks(){
 
@@ -254,7 +132,7 @@ confetti({
 
 particleCount:180,
 
-spread:150,
+spread:160,
 
 startVelocity:45,
 
@@ -272,30 +150,32 @@ y:Math.random()*0.6
 
 }
 
-alert("🎉 Happy Birthday Ani ❤️");
+alert("🎉 Happy Birthday Mine Bhalu ❤️");
 
 }
 
-// =====================================
-// Welcome Animation
-// =====================================
+// ===============================
+// Floating Confetti
+// ===============================
 
-window.addEventListener("load",()=>{
+setInterval(()=>{
 
-document.body.style.opacity="0";
+confetti({
 
-setTimeout(()=>{
+particleCount:40,
 
-document.body.style.transition="opacity 1.5s";
+spread:60,
 
-document.body.style.opacity="1";
+origin:{
 
-},300);
+x:Math.random(),
+
+y:Math.random()-0.2
+
+}
 
 });
 
-// =====================================
-// Console Message
-// =====================================
+},9000);
 
-console.log("🎂 Premium Birthday Website Loaded Successfully ❤️");
+console.log("Premium Birthday Website Loaded ❤️");
