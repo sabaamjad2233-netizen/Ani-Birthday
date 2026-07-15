@@ -1,284 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Anique! 🪐</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday My Love ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
 </head>
+
 <body>
 
-    <!-- Video Dynamic Code-Based Galaxy Background -->
-    <div class="bg-galaxy">
-        <div class="stars-layer"></div>
-        <div class="twinkle-layer"></div>
-        <div class="nebula-glow"></div>
-    </div>
+<!-- =========================
+Loading Screen
+========================= -->
 
-    <!-- Background Music -->
-    <audio id="bday-music" loop>
-        <source src="WhatsApp Audio 2026-07-08 at 11.50.26 PM.mpeg" type="audio/mpeg">
-    </audio>
+<div id="loader">
 
-    <!-- Main Slides App Framework -->
-    <div id="app">
+<div class="loader-heart">❤️</div>
 
-        <!-- SLIDE 1: WELCOME INTRO -->
-        <div class="slide active" id="slide-1">
-            <div class="content-box">
-                <h1>Happy Birthday</h1>
-                <p>Today the stars align just for you ✨ Welcome to a little galaxy of memories, love, and wishes I made especially for the most amazing person in my universe.</p>
-                <button class="btn-next" onclick="goToSlide(1, 2); startMusic();">Enter the Galaxy 🌌</button>
-            </div>
-        </div>
+<h2>Preparing Something Special...</h2>
 
-        <!-- SLIDE 2: PICTURE 1 (anique.jpg) -->
-        <div class="slide" id="slide-2">
-            <div class="content-box">
-                <h2 class="title-premium">✨ Starry Memories</h2>
-                <div class="single-photo-wrapper">
-                    <img src="anique.jpg" alt="Anique 1">
-                </div>
-                <p class="caption-premium">"In your smile, I see something more beautiful than all the stars in the night sky. You make my world infinitely brighter. 💖"</p>
-                <button class="btn-next" onclick="goToSlide(2, 3)">Next Memory 📸</button>
-            </div>
-        </div>
+</div>
 
-        <!-- SLIDE 3: PICTURE 2 (anique (2).jpg) -->
-        <div class="slide" id="slide-3">
-            <div class="content-box">
-                <h2 class="title-premium">✨ Blessed With The Best</h2>
-                <div class="single-photo-wrapper">
-                    <img src="anique (2).jpg" alt="Anique 2">
-                </div>
-                <p class="caption-premium">"Having you by my side is the greatest blessing I could ever ask for. Happy Birthday to the owner of my heart. 🥰👑"</p>
-                <button class="btn-next" onclick="goToSlide(3, 4)">Next Memory 📸</button>
-            </div>
-        </div>
+<!-- =========================
+Background Video
+========================= -->
 
-        <!-- SLIDE 4: PICTURE 3 (anique (3).jpg) -->
-        <div class="slide" id="slide-4">
-            <div class="content-box">
-                <h2 class="title-premium">✨ My Absolute Favorite</h2>
-                <div class="single-photo-wrapper">
-                    <img src="anique (3).jpg" alt="Anique 3">
-                </div>
-                <p class="caption-premium">"Every single day spent with you feels like a dream come true. Wishing you a lifetime of endless happiness and peace. 🫂❤️"</p>
-                <button class="btn-next" onclick="goToSlide(4, 5)">Next Memory 📸</button>
-            </div>
-        </div>
+<video autoplay muted loop playsinline id="bgVideo">
 
-        <!-- SLIDE 5: PICTURE 4 (happy birthday .jpeg) -->
-        <div class="slide" id="slide-5">
-            <div class="content-box">
-                <h2 class="title-premium">✨ Celebration Time</h2>
-                <div class="single-photo-wrapper">
-                    <img src="happy birthday .jpeg" alt="Happy Birthday Banner">
-                </div>
-                <p class="caption-premium">"May every wish you make today find its way to fulfillment. Let's make this birthday absolutely unforgettable! 🍾🎉"</p>
-                <button class="btn-next" onclick="goToSlide(5, 6)">Next Memory 📸</button>
-            </div>
-        </div>
+<source src="videos/background.mp4" type="video/mp4">
 
-        <!-- SLIDE 6: PICTURE 5 (wishes.jpeg) -->
-        <div class="slide" id="slide-6">
-            <div class="content-box">
-                <h2 class="title-premium">✨ Boundless Wishes</h2>
-                <div class="single-photo-wrapper">
-                    <img src="wishes.jpeg" alt="Wishes">
-                </div>
-                <p class="caption-premium">"Sending you four little stars of infinite joy, warm love, sweet peace, and big dreams. You deserve the absolute best. 💫🌺"</p>
-                <button class="btn-next" onclick="goToSlide(6, 7)">Next Memory 📸</button>
-            </div>
-        </div>
+</video>
 
-        <!-- SLIDE 7: PICTURE 6 (head.jpeg) -->
-        <div class="slide" id="slide-7">
-            <div class="content-box">
-                <h2 class="title-premium">✨ Together Forever</h2>
-                <div class="single-photo-wrapper">
-                    <img src="head.jpeg" alt="Head Container">
-                </div>
-                <p class="caption-premium">"No matter where life takes us, my hand will always hold yours. You are my home, my anchor, and my sanctuary. 👫💞"</p>
-                <button class="btn-next" onclick="goToSlide(7, 8)">Our Journey 🚀</button>
-            </div>
-        </div>
+<div class="overlay"></div>
 
-        <!-- SLIDE 8: OUR JOURNEY (2 VIDEOS COLUMN) -->
-        <div class="slide" id="slide-8">
-            <div class="content-box">
-                <h2 class="title-premium">🐻 Our Journey</h2>
-                <div class="video-flex-premium">
-                    <video autoplay muted loop playsinline><source src="anime.mp4" type="video/mp4"></video>
-                    <video autoplay muted loop playsinline><source src="gir.mp4" type="video/mp4"></video>
-                </div>
-                <p class="caption-premium">Celebrating YOU — the reason so many of my days feel like a beautiful gift.</p>
-                <button class="btn-next" onclick="goToSlide(8, 9)">Read My Heart 💌</button>
-            </div>
-        </div>
+<!-- =========================
+Floating Hearts
+========================= -->
 
-        <!-- SLIDE 9: THE LOVE LETTER NOTES BOX -->
-        <div class="slide" id="slide-9">
-            <div class="content-box">
-                <h2 class="title-premium">💌 A Love Note</h2>
-                <div class="scroll-letter-premium">
-                    <div class="letter-card">
-                        <h3>Happy Birthday My Luv! 🎂🎈</h3>
-                    </div>
-                    <div class="letter-card">
-                        <p>Happy Birthday 🎂❤️ to most favourite person of my life 🥰❤️ i don't know where to start but I have a lot to say to you 🥺👩 today is your birthday and is the best day for you to relax and enjoy the best things in your life 🥰</p>
-                    </div>
-                    <div class="letter-card">
-                        <p>❤️ this day i wanna thank you for being in my life 👫❤️ thanks for your love 💕 and support 👫 thanks for accept all my shortcomings 🥺❤️ and have always been able to make peace with my dark past 🥺🫂</p>
-                    </div>
-                    <div class="letter-card">
-                        <p>i've always waited for this day because i wanted to make you feel special 🥰 and try to make you more happiest you're the best I've in my life 🫂❤️</p>
-                    </div>
-                    <div class="letter-card">
-                        <p>more good life to my best love the one I can tell my soul too 👫❤️ who can relate to me like no one other 🥰 who I can laugh with no extent... promise to always stick by your side through good and bad..... I Love You So Much 🫂🥰</p>
-                    </div>
-                    <div class="letter-card">
-                        <p>All the times fighting with you and feeling nothing without you 👩‍❤️‍💋‍👩🥺 and I'm glad I have this person with whom I can speak my mind without the fear of being judged 🥺🫂</p>
-                    </div>
-                    <div class="letter-card">
-                        <p>you are one of the reasons foreverything that's happened in my life mostly 🥺 from my tantrums to my madness 😂 to my all happiness 💕 and sadness you have always stood there as a rock!!</p>
-                    </div>
-                    <div class="letter-card">
-                        <p>You are someone i can blindly count on always till my last breath 🥺 i wish nothing but happiness, peace, prosperity and love over your life 🤍🫂</p>
-                    </div>
-                </div>
-                <button class="btn-next" onclick="goToSlide(9, 10)">Next Moments ✨</button>
-            </div>
-        </div>
+<div class="hearts">
 
-        <!-- SLIDE 10: INNER CLIPS DISCOVERY AREA (3 MINI VIDS) -->
-        <div class="slide" id="slide-10">
-            <div class="content-box">
-                <h2 class="title-premium">🧸 Cute Moments</h2>
-                <div class="mini-grid-premium">
-                    <video autoplay muted loop playsinline><source src="cheeks.mp4" type="video/mp4"></video>
-                    <video autoplay muted loop playsinline><source src="cheeks 2.mp4" type="video/mp4"></video>
-                    <video autoplay muted loop playsinline><source src="rose.mp4" type="video/mp4"></video>
-                </div>
-                <button class="btn-next" onclick="goToSlide(10, 11)">Why You're Special 🌟</button>
-            </div>
-        </div>
+<span>❤️</span>
 
-        <!-- SLIDE 11: INTERACTIVE REVEAL CARDS SYSTEM -->
-        <div class="slide" id="slide-11">
-            <div class="content-box">
-                <h2 class="title-premium">🌸 Why You're Special</h2>
-                <p class="hint-premium">Tap each card to reveal... 🤫</p>
-                <div class="interactive-grid-premium">
-                    <div class="reveal-node" onclick="revealCardNode(this, 'You make every day feel like a celebration! 🥳')">?</div>
-                    <div class="reveal-node" onclick="revealCardNode(this, 'Your laugh is my absolute favorite melody. 🎵')">?</div>
-                    <div class="reveal-node" onclick="revealCardNode(this, 'You stand by me like a solid unbreakable rock. 🛡️')">?</div>
-                    <div class="reveal-node" onclick="revealCardNode(this, 'You love me unconditionally with all your soul. ❤️')">?</div>
-                    <div class="reveal-node" onclick="revealCardNode(this, 'My Bhalu, you are my entire universe! 🌌')">?</div>
-                    <div class="reveal-node" onclick="revealCardNode(this, 'I can count on you with my eyes blindly closed. 🫂')">?</div>
-                </div>
-                <button class="btn-next" onclick="goToSlide(11, 12)">Make a Wish 🎂</button>
-            </div>
-        </div>
+<span>🤍</span>
 
-        <!-- SLIDE 12: VIRTUAL CAKE BLOW ACT -->
-        <div class="slide" id="slide-12">
-            <div class="content-box">
-                <h2 class="title-premium">🎂 Make a Wish</h2>
-                <div class="cake-box-premium">
-                    <video autoplay muted loop playsinline class="cake-video-fluid"><source src="dance.mp4" type="video/mp4"></video>
-                    <div id="cake-trigger" class="cake-asset-emoji" onclick="cutCakePremium()">🎂</div>
-                </div>
-                <p id="cake-hint-text" class="hint-premium">Tap the cake to blow out candles & cut! 🕯️</p>
-                <button class="btn-next" onclick="goToSlide(12, 13)">Open Gifts 🎁</button>
-            </div>
-        </div>
+<span>💖</span>
 
-        <!-- SLIDE 13: SURPRISE GIFTS OPENER -->
-        <div class="slide" id="slide-13">
-            <div class="content-box">
-                <h2 class="title-premium">🎁 Your Surprise Box</h2>
-                <div class="gift-flex-premium">
-                    <div class="gift-cube-node" onclick="revealGiftNode(this, '🍫 Wrapped Chocolates sent with huge hugs just for you!')">🎁</div>
-                    <div class="gift-cube-node" onclick="revealGiftNode(this, '💐 A gorgeous visual bouquet for my favorite human!')">🎁</div>
-                </div>
-                <p id="gift-hint-text" class="hint-premium">Click a premium box to open your gift!</p>
-                <button class="btn-next" onclick="goToSlide(13, 14)">Final Surprise 🔒</button>
-            </div>
-        </div>
+<span>💕</span>
 
-        <!-- SLIDE 14: GRAND FINALE -->
-        <div class="slide" id="slide-14">
-            <div class="content-box finale-box">
-                <div class="bubu-avatar-circle">
-                    <video autoplay muted loop playsinline><source src="bubu.mp4" type="video/mp4"></video>
-                </div>
-                <h1 class="finale-title-text">Happy Birthday Bhalu ♥ <br><span class="accent-glow">My Love 😘💕</span></h1>
-                <p class="finale-subtitle-text">Mine Bhalu Anique ♥️🌺🐻🧸🧸</p>
-                <button class="btn-next closure-btn" onclick="terminateAppSession()">Finish Surprises 🚪</button>
-            </div>
-        </div>
+<span>💝</span>
 
-        <!-- BOTTOM NAVIGATION TRACKER DOTS -->
-        <div class="slide-dots-navigation">
-            <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="dot"></span><span class="dot"></span>
-        </div>
+<span>💗</span>
 
-    </div>
+<span>💞</span>
 
-    <script>
-        function startMusic() {
-            const track = document.getElementById('bday-music');
-            track.volume = 0.95;
-            track.play().catch(e => console.log("Audio initialized."));
-        }
+<span>💘</span>
 
-        function goToSlide(current, next) {
-            document.getElementById(`slide-${current}`).classList.remove('active');
-            document.getElementById(`slide-${next}`).classList.add('active');
-            
-            const dots = document.querySelectorAll('.dot');
-            dots.forEach((dot, index) => {
-                if (index === next - 1) dot.classList.add('active');
-                else dot.classList.remove('active');
-            });
+</div>
 
-            if ([2, 4, 7, 11, 12, 14].includes(next)) {
-                popConfettiBurst();
-            }
-        }
+<!-- =========================
+Hero Section
+========================= -->
 
-        function revealCardNode(el, message) {
-            el.innerHTML = message;
-            el.classList.add('revealed');
-            popConfettiBurst();
-        }
+<section class="hero">
 
-        function cutCakePremium() {
-            document.getElementById('cake-trigger').innerHTML = "¼🎉";
-            document.getElementById('cake-hint-text').innerHTML = "Wish made successfully! I love you so much! ❤️";
-            popConfettiBurst();
-        }
+<h2>Happy Birthday</h2>
 
-        function revealGiftNode(el, message) {
-            el.innerHTML = "🎉";
-            document.getElementById('gift-hint-text').innerHTML = message;
-            popConfettiBurst();
-        }
+<h1>Ani ❤️</h1>
 
-        function popConfettiBurst() {
-            confetti({ particleCount: 40, spread: 65, origin: { y: 0.75 }, colors: ['#ff758f', '#7209b7', '#fff'] });
-        }
+<p>
 
-        function terminateAppSession() {
-            window.close();
-            document.body.innerHTML = "<div style='text-align:center; margin-top:45vh; color:white; font-family:sans-serif;'><h1>Surprise Box Closed Safely! ♥️</h1><p>Mine Bhalu Anique ♥️🌺🐻🧸🧸</p></div>";
-        }
-    </script>
+Today is your special day.
+
+I made something beautiful only for you.
+
+</p>
+
+<button onclick="startJourney()">
+
+Start Surprise ✨
+
+</button>
+
+</section>
+
+<!-- =========================
+Section 1
+========================= -->
+
+<section class="hidden section" id="section1">
+
+<h2>For My Favourite Person ❤️</h2>
+
+<p>
+
+Every moment with you feels magical.
+
+Your smile is my happiness.
+
+Your laugh is my peace.
+
+Thank you for existing.
+
+</p>
+
+<button onclick="nextSection('section2')">
+
+Continue ➜
+
+</button>
+
+</section>
+
+<!-- =========================
+Section 2
+========================= -->
+
+<section class="hidden section" id="section2">
+
+<h2>Our Beautiful Memories 📸</h2>
+
+<div class="gallery">
+
+<img src="images/photo1.jpg">
+
+<img src="images/photo2.jpg">
+
+<img src="images/photo3.jpg">
+
+<img src="images/photo4.jpg">
+
+</div>
+
+<button onclick="nextSection('section3')">
+
+Next ❤️
+
+</button>
+
+</section>
+
+<!-- =========================
+Section 3
+========================= -->
+
+<section class="hidden section" id="section3">
+
+<h2>Special Message 💌</h2>
+
+<p>
+
+No matter where life takes us,
+
+I will always pray for your happiness.
+
+May your smile never fade.
+
+Happy Birthday Once Again ❤️
+
+</p>
+
+<button onclick="nextSection('section4')">
+
+Open Gift 🎁
+
+</button>
+
+</section>
+<!-- =========================
+Section 4 - Gift Box
+========================= -->
+
+<section class="hidden section" id="section4">
+
+<h2>Your Special Gift 🎁</h2>
+
+<div class="gift-box" onclick="openGift()">
+🎁
+</div>
+
+<p>Click the Gift Box</p>
+
+</section>
+
+<!-- =========================
+Section 5 - Cake
+========================= -->
+
+<section class="hidden section" id="section5">
+
+<h2>Birthday Cake 🎂</h2>
+
+<div class="cake">
+
+<div class="candle">🕯️</div>
+
+<div class="cake-body">🎂</div>
+
+</div>
+
+<p>Make a Wish ✨</p>
+
+<button onclick="nextSection('section6')">
+
+Celebrate 🎉
+
+</button>
+
+</section>
+
+<!-- =========================
+Section 6 - Birthday Video
+========================= -->
+
+<section class="hidden section" id="section6">
+
+<h2>Special Video ❤️</h2>
+
+<video controls width="90%">
+
+<source src="videos/intro.mp4" type="video/mp4">
+
+</video>
+
+<br><br>
+
+<button onclick="nextSection('section7')">
+
+Next 💖
+
+</button>
+
+</section>
+
+<!-- =========================
+Section 7 - Final Message
+========================= -->
+
+<section class="hidden section" id="section7">
+
+<h2>I Have Only One Wish ❤️</h2>
+
+<p>
+
+May Allah always protect you.
+
+May every dream of yours come true.
+
+Thank you for being the most beautiful part of my life.
+
+Happy Birthday My Love ❤️
+
+</p>
+
+<h1>🎉 Happy Birthday Ani 🎉</h1>
+
+</section>
+<!-- =========================
+Premium Love Letter
+========================= -->
+
+<section class="hidden section" id="section8">
+
+<h2>💌 A Letter For You</h2>
+
+<div class="letter">
+
+<h3>My Dearest Ani ❤️</h3>
+
+<p id="typingText">
+
+Every day with you is a beautiful memory.
+You make my life brighter, happier and more meaningful.
+On your birthday I pray that Allah blesses you with endless happiness,
+good health, success and lots of beautiful moments.
+Thank you for being part of my life.
+Happy Birthday My Love ❤️
+
+</p>
+
+</div>
+
+<button onclick="nextSection('section9')">
+Next Surprise ✨
+</button>
+
+</section>
+
+<!-- =========================
+Premium Photo Slider
+========================= -->
+
+<section class="hidden section" id="section9">
+
+<h2>📸 Beautiful Memories</h2>
+
+<div class="slider">
+
+<img src="images/photo1.jpg" class="slide active">
+
+<img src="images/photo2.jpg" class="slide">
+
+<img src="images/photo3.jpg" class="slide">
+
+<img src="images/photo4.jpg" class="slide">
+
+</div>
+
+<button onclick="nextSection('section10')">
+
+Continue ❤️
+
+</button>
+
+</section>
+
+<!-- =========================
+Final Surprise
+========================= -->
+
+<section class="hidden section" id="section10">
+
+<h2>✨ One Last Surprise ✨</h2>
+
+<h1>I Love You ❤️</h1>
+
+<p>
+
+No matter what happens,
+I'll always pray for your happiness.
+
+May every birthday bring more success,
+more smiles and endless blessings.
+
+🎂 Happy Birthday Ani 🎂
+
+</p>
+
+<button onclick="showFireworks()">
+
+Celebrate 🎉
+
+</button>
+
+</section>
+
+<!-- =========================
+Background Music
+========================= -->
+
+<audio id="music" loop>
+
+<source src="music/birthday.mp3" type="audio/mpeg">
+
+</audio>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
