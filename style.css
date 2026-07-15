@@ -1,104 +1,218 @@
-<!-- =========================
-Section 5 - Birthday Cake
-========================= -->
+/* ===========================
+Google Font
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
 
-<section class="section hidden" id="section5">
+/* ===========================
+Reset
+=========================== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-<h2>🎂 Birthday Cake 🎂</h2>
+html{
+scroll-behavior:smooth;
+}
 
-<div class="cake">
+body{
+font-family:'Poppins',sans-serif;
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
 
-<div class="candle">🕯️</div>
+/* ===========================
+Background Video
+=========================== */
 
-<div class="cake-body">🎂</div>
+#bgVideo{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+}
 
-</div>
+/* ===========================
+Dark Overlay
+=========================== */
 
-<p>Make A Beautiful Wish ❤️</p>
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+z-index:-1;
+}
 
-<button onclick="nextSection('section6')">
+/* ===========================
+Loader
+=========================== */
 
-Celebrate 🎉
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:#000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:99999;
+}
 
-</button>
+.loader-heart{
+font-size:80px;
+animation:heartbeat 1s infinite;
+}
 
-</section>
+#loader h2{
+margin-top:20px;
+font-size:28px;
+color:#ff66b2;
+}
 
-<!-- =========================
-Section 6 - Special Video
-========================= -->
+@keyframes heartbeat{
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
 
-<section class="section hidden" id="section6">
+/* ===========================
+Floating Hearts
+=========================== */
 
-<h2>Special Video ❤️</h2>
+.hearts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+}
 
-<video controls width="90%">
+.hearts span{
+position:absolute;
+bottom:-50px;
+font-size:25px;
+animation:floatHearts 12s linear infinite;
+}
 
-<source src="anime.mp4" type="video/mp4">
+.hearts span:nth-child(1){left:10%;animation-delay:0s;}
+.hearts span:nth-child(2){left:25%;animation-delay:2s;}
+.hearts span:nth-child(3){left:40%;animation-delay:4s;}
+.hearts span:nth-child(4){left:55%;animation-delay:1s;}
+.hearts span:nth-child(5){left:70%;animation-delay:3s;}
+.hearts span:nth-child(6){left:82%;animation-delay:5s;}
+.hearts span:nth-child(7){left:92%;animation-delay:6s;}
+.hearts span:nth-child(8){left:50%;animation-delay:7s;}
 
-Your browser does not support video.
+@keyframes floatHearts{
+0%{
+transform:translateY(0);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+/* ===========================
+Hero Section
+=========================== */
 
-</video>
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
 
-<br><br>
+.hero h2{
+font-size:35px;
+color:#ffd6e8;
+margin-bottom:10px;
+}
 
-<button onclick="nextSection('section7')">
+.hero h1{
+font-family:'Great Vibes',cursive;
+font-size:90px;
+color:#ff66b2;
+text-shadow:
+0 0 10px #ff1493,
+0 0 25px #ff1493,
+0 0 50px #ff1493;
+margin-bottom:20px;
+animation:glowTitle 2s infinite alternate;
+}
 
-Next 💕
+.hero p{
+max-width:700px;
+font-size:20px;
+line-height:1.8;
+margin-bottom:35px;
+color:#ffffff;
+}
 
-</button>
+@keyframes glowTitle{
 
-</section>
+from{
+text-shadow:
+0 0 10px #ff1493,
+0 0 25px #ff1493;
+}
 
-<!-- =========================
-Section 7 - Final Wish
-========================= -->
+to{
+text-shadow:
+0 0 20px #fff,
+0 0 40px #ff1493,
+0 0 70px #ff1493;
+}
 
-<section class="section hidden" id="section7">
+}
 
-<h2>💖 One Last Wish 💖</h2>
+/* ===========================
+Premium Button
+=========================== */
 
-<p>
+.hero button,
+.section button{
 
-May Allah always protect you.
+padding:15px 45px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#ff1493,#ff66cc);
+color:white;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+transition:.4s;
+box-shadow:0 0 20px rgba(255,20,147,.6);
 
-May every dream come true.
+}
 
-Stay happy.
+.hero button:hover,
+.section button:hover{
 
-Stay blessed.
+transform:scale(1.08);
+box-shadow:0 0 35px rgba(255,20,147,.9);
 
-Stay smiling forever.
-
-Happy Birthday Mine Bhalu ♥️🌺🐻🧸🧸
-
-</p>
-
-<h1>🎉 Happy Birthday Ani ❤️ 🎉</h1>
-
-<button onclick="showFireworks()">
-
-Celebrate 🎆
-
-</button>
-
-</section>
-
-<!-- =========================
-Background Music
-========================= -->
-
-<audio id="music" loop>
-
-<source src="birthday.mp3" type="audio/mpeg">
-
-</audio>
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
+}
 /* ===========================
 Common Sections
 =========================== */
@@ -110,7 +224,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:40px 20px;
+padding:50px 20px;
 }
 
 .hidden{
@@ -118,35 +232,32 @@ display:none;
 }
 
 .section h2{
-font-size:42px;
+font-size:40px;
 margin-bottom:25px;
-color:#ff80bf;
+color:#ff8ac2;
+text-shadow:0 0 15px rgba(255,20,147,.7);
 }
 
 .section p{
 max-width:800px;
 font-size:18px;
-line-height:1.8;
+line-height:1.9;
+color:#fff;
 }
 
 /* ===========================
-Glass Letter
+Love Letter
 =========================== */
 
 .letter{
 width:90%;
 max-width:800px;
 padding:30px;
+border-radius:25px;
 background:rgba(255,255,255,.12);
 backdrop-filter:blur(15px);
-border-radius:25px;
 border:1px solid rgba(255,255,255,.2);
-box-shadow:0 0 25px rgba(255,20,147,.4);
-}
-
-.letter p{
-font-size:18px;
-line-height:1.9;
+box-shadow:0 0 30px rgba(255,20,147,.4);
 }
 
 /* ===========================
@@ -154,10 +265,10 @@ Gallery
 =========================== */
 
 .gallery{
+width:90%;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
-width:90%;
 margin-top:30px;
 }
 
@@ -166,33 +277,14 @@ width:100%;
 height:280px;
 object-fit:cover;
 border-radius:20px;
+border:3px solid rgba(255,255,255,.2);
 transition:.5s;
-box-shadow:0 0 20px rgba(255,20,147,.4);
+box-shadow:0 0 25px rgba(255,20,147,.4);
 }
 
 .gallery img:hover{
-transform:scale(1.08);
-}
-
-/* ===========================
-Buttons
-=========================== */
-
-.section button{
-margin-top:35px;
-padding:15px 40px;
-border:none;
-border-radius:50px;
-font-size:18px;
-cursor:pointer;
-background:linear-gradient(45deg,#ff1493,#ff66cc);
-color:#fff;
-transition:.4s;
-box-shadow:0 0 20px hotpink;
-}
-
-.section button:hover{
-transform:scale(1.08);
+transform:scale(1.05);
+box-shadow:0 0 40px hotpink;
 }
 
 /* ===========================
@@ -202,13 +294,7 @@ Gift Box
 .gift-box{
 font-size:120px;
 cursor:pointer;
-margin:35px 0;
 animation:bounce 2s infinite;
-transition:.4s;
-}
-
-.gift-box:hover{
-transform:scale(1.2);
 }
 
 @keyframes bounce{
@@ -216,7 +302,7 @@ transform:scale(1.2);
 transform:translateY(0);
 }
 50%{
-transform:translateY(-18px);
+transform:translateY(-20px);
 }
 }
 
@@ -228,7 +314,7 @@ Cake
 display:flex;
 flex-direction:column;
 align-items:center;
-margin:30px 0;
+margin:25px 0;
 }
 
 .candle{
@@ -250,38 +336,6 @@ to{transform:rotate(2deg);}
 0%,100%{transform:scale(1);}
 50%{transform:scale(1.08);}
 }
-/* ===========================
-Final Heading
-=========================== */
-
-.section h1{
-font-family:'Great Vibes',cursive;
-font-size:70px;
-margin-top:25px;
-color:#ff66b2;
-text-shadow:
-0 0 10px hotpink,
-0 0 20px deeppink,
-0 0 40px #ff1493;
-animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-
-from{
-text-shadow:
-0 0 10px hotpink,
-0 0 20px deeppink;
-}
-
-to{
-text-shadow:
-0 0 20px white,
-0 0 40px hotpink,
-0 0 70px deeppink;
-}
-
-}
 
 /* ===========================
 Video
@@ -292,107 +346,4 @@ width:90%;
 max-width:900px;
 border-radius:20px;
 box-shadow:0 0 30px rgba(255,20,147,.5);
-}
-
-/* ===========================
-Scrollbar
-=========================== */
-
-::-webkit-scrollbar{
-width:8px;
-}
-
-::-webkit-scrollbar-track{
-background:#111;
-}
-
-::-webkit-scrollbar-thumb{
-background:#ff1493;
-border-radius:20px;
-}
-
-/* ===========================
-Responsive
-=========================== */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:60px;
-}
-
-.hero h2{
-font-size:26px;
-}
-
-.hero p{
-font-size:17px;
-}
-
-.section h2{
-font-size:30px;
-}
-
-.section h1{
-font-size:46px;
-}
-
-.section p{
-font-size:16px;
-}
-
-.gallery{
-grid-template-columns:1fr;
-}
-
-.gallery img{
-height:240px;
-}
-
-.gift-box{
-font-size:90px;
-}
-
-.cake-body{
-font-size:100px;
-}
-
-.hero button,
-.section button{
-padding:12px 28px;
-font-size:16px;
-}
-
-}
-
-@media(max-width:480px){
-
-.hero h1{
-font-size:46px;
-}
-
-.hero h2{
-font-size:22px;
-}
-
-.hero p{
-font-size:15px;
-}
-
-.section h2{
-font-size:26px;
-}
-
-.section h1{
-font-size:38px;
-}
-
-#loader h1{
-font-size:60px;
-}
-
-#loader h2{
-font-size:18px;
-}
-
 }
