@@ -8,7 +8,7 @@ setTimeout(() => {
 
 document.getElementById("loader").style.display = "none";
 
-}, 1500
+}, 300
 
 });
 
@@ -150,7 +150,26 @@ y:Math.random()*0.6
 
 }
 
-alert("🎉 Happy Birthday Mine Bhalu ❤️");
+setTimeout(() => {
+    document.body.innerHTML = `
+    <div style="
+        background:#000;
+        color:white;
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        padding:20px;
+        font-family:Arial;
+    ">
+        <h1>🎉 Happy Birthday Meri Bhalu ❤️</h1>
+        <h2>I Love You So Much 💖</h2>
+        <p>May Allah bless you with happiness, success and endless smiles. ❤️</p>
+        <h3>Forever & Always 💍</h3>
+    </div>`;
+}, 4000);
 
 }
 
