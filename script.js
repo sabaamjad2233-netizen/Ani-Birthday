@@ -1,193 +1,149 @@
+// ===============================
+// Loader
+// ===============================
 window.addEventListener("load", function () {
     setTimeout(function () {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("hero").style.display = "flex";
+        const loader = document.getElementById("loader");
+        if (loader) loader.style.display = "none";
+
+        const hero = document.getElementById("hero");
+        if (hero) hero.style.display = "flex";
     }, 300);
 });
 
 // ===============================
 // Start Journey
 // ===============================
-
 function startJourney() {
+    document.getElementById("hero").style.display = "none";
+    document.getElementById("section1").style.display = "flex";
 
-document.getElementById("hero").style.display = "none";
+    playMusic();
 
-document.getElementById("section1").style.display = "flex";
-
-playMusic();
-
-confetti({
-
-particleCount:200,
-
-spread:120,
-
-origin:{y:0.6}
-
-});
-
+    if (typeof confetti !== "undefined") {
+        confetti({
+            particleCount: 200,
+            spread: 120,
+            origin: { y: 0.6 }
+        });
+    }
 }
 
 // ===============================
 // Next Sections
 // ===============================
+function nextSection(nextId) {
 
-function nextSection(nextId){
+    document.querySelectorAll(".section").forEach(function (section) {
+        section.style.display = "none";
+    });
 
-const sections=document.querySelectorAll(".section");
+    document.getElementById(nextId).style.display = "flex";
 
-sections.forEach(section=>{
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
-section.style.display="none";
-
-});
-
-document.getElementById(nextId).style.display="flex";
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-confetti({
-
-particleCount:120,
-
-spread:80
-
-});
-
+    if (typeof confetti !== "undefined") {
+        confetti({
+            particleCount: 120,
+            spread: 80
+        });
+    }
 }
 
 // ===============================
-// Background Music
+// Music
 // ===============================
+function playMusic() {
+    const music = document.getElementById("music");
 
-function playMusic(){
-
-const music=document.getElementById("music");
-
-if(music){
-
-music.play().catch(()=>{
-
-console.log("Autoplay blocked");
-
-});
-
-}
-
+    if (music) {
+        music.play().catch(function () {});
+    }
 }
 
 // ===============================
-// Gift Box
+// Gift
 // ===============================
+function openGift() {
 
-function openGift(){
+    const gift = document.querySelector(".gift-box");
 
-const gift=document.querySelector(".gift-box");
+    gift.innerHTML = "💖";
+    gift.style.transform = "scale(1.3)";
 
-gift.innerHTML="💖";
+    if (typeof confetti !== "undefined") {
+        confetti({
+            particleCount: 300,
+            spread: 180
+        });
+    }
 
-gift.style.transform="scale(1.3)";
-
-confetti({
-
-particleCount:300,
-
-spread:180
-
-});
-
-setTimeout(()=>{
-
-nextSection("section5");
-
-},1500);
-
+    setTimeout(function () {
+        nextSection("section5");
+    }, 1500);
 }
 
 // ===============================
-// Fireworks
+// Final Fireworks
 // ===============================
+function showFireworks() {
 
-function showFireworks(){
+    for (let i = 0; i < 12; i++) {
 
-for(let i=0;i<12;i++){
+        setTimeout(function () {
 
-setTimeout(()=>{
+            if (typeof confetti !== "undefined") {
+                confetti({
+                    particleCount: 180,
+                    spread: 160,
+                    startVelocity: 45,
+                    origin: {
+                        x: Math.random(),
+                        y: Math.random() * 0.6
+                    }
+                });
+            }
 
-confetti({
+        }, i * 300);
+    }
 
-particleCount:180,
+    setTimeout(function () {
 
-spread:160,
+        document.body.innerHTML = `
+        <div style="background:#000;color:#fff;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;font-family:Poppins,sans-serif;">
+            <h1 style="font-size:50px;">🎉 Happy Birthday Ani ❤️</h1>
+            <h2>I Love You So Much 💖</h2>
+            <p style="max-width:600px;font-size:20px;line-height:1.8;">
+                May Allah always protect you.<br>
+                May every dream of yours come true.<br><br>
+                Thank you for being the most beautiful part of my life. ❤️
+            </p>
+            <h2>Forever & Always 🧸💕</h2>
+        </div>`;
 
-startVelocity:45,
-
-origin:{
-
-x:Math.random(),
-
-y:Math.random()*0.6
-
-}
-
-});
-
-},i*300);
-
-}
-
-setTimeout(() => {
-    document.body.innerHTML = `
-    <div style="
-        background:#000;
-        color:white;
-        height:100vh;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        text-align:center;
-        padding:20px;
-        font-family:Arial;
-    ">
-        <h1>🎉 Happy Birthday Meri Bhalu ❤️</h1>
-        <h2>I Love You So Much 💖</h2>
-        <p>May Allah bless you with happiness, success and endless smiles. ❤️</p>
-        <h3>Forever & Always 💍</h3>
-    </div>`;
-}, 4000);
-
+    }, 4200);
 }
 
 // ===============================
 // Floating Confetti
 // ===============================
+if (typeof confetti !== "undefined") {
 
-setInterval(()=>{
+    setInterval(function () {
 
-confetti({
+        confetti({
+            particleCount: 40,
+            spread: 60,
+            origin: {
+                x: Math.random(),
+                y: Math.random() - 0.2
+            }
+        });
 
-particleCount:40,
-
-spread:60,
-
-origin:{
-
-x:Math.random(),
-
-y:Math.random()-0.2
-
+    }, 9000);
 }
 
-});
-
-},9000);
-
-console.log("Premium Birthday Website Loaded ❤️");
+console.log("Birthday Website Loaded ❤️");
