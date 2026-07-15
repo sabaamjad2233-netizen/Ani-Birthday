@@ -8,7 +8,7 @@ setTimeout(() => {
 
 document.getElementById("loader").style.display = "none";
 
-}, 2500);
+}, 1500
 
 });
 
